@@ -1223,7 +1223,6 @@ function cacheElements() {
   els.gameOverSummary = document.getElementById("gameOverSummary");
   els.restartButton = document.getElementById("restartButton");
   els.reviewMistakesButton = document.getElementById("reviewMistakesButton");
-  els.startButton = document.getElementById("startButton");
   els.resetButton = document.getElementById("resetButton");
   els.mistakeModeButton = document.getElementById("mistakeModeButton");
   els.weakSpotStats = document.getElementById("weakSpotStats");
@@ -1234,7 +1233,6 @@ function bindEvents() {
   els.nextButton.addEventListener("click", nextTask);
   els.hintButton.addEventListener("click", showHint);
   els.themeToggle.addEventListener("click", toggleTheme);
-  els.startButton.addEventListener("click", () => startMode(state.currentMode));
   els.restartButton.addEventListener("click", restartGame);
   els.reviewMistakesButton.addEventListener("click", () => startMode("mistakes"));
   els.mistakeModeButton.addEventListener("click", () => startMode("mistakes"));
