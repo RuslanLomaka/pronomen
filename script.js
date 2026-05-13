@@ -1661,6 +1661,7 @@ function cacheElements() {
   els.controlsDisclosure = document.getElementById("controlsDisclosure");
   els.themeToggle = document.getElementById("themeToggle");
   els.timerBox = document.getElementById("timerBox");
+  els.contextBlock = document.getElementById("contextBlock");
   els.nanoContext = document.getElementById("nanoContext");
   els.originalSentence = document.getElementById("originalSentence");
   els.tagList = document.getElementById("tagList");
@@ -2141,6 +2142,7 @@ function updateStats() {
   renderWeakSpots();
   renderModeButtonsState();
   renderLevelButtonsState();
+  els.contextBlock.classList.toggle("hidden", state.currentMode !== "context");
 }
 
 function loadTheme() {
