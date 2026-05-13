@@ -42,3 +42,19 @@ Each task should include:
 - `hint`
 
 Every `options` array must contain exactly four strings, and exactly one must match `correct`.
+
+## Appendix: Context Pronouns
+
+Gemini CLI review was requested for this feature, but it could not complete because browser authentication was required and timed out. The following plan is the local working guideline.
+
+Add context-sensitive pronoun practice as a separate learning block and mode, not as hidden behavior inside normal tasks.
+
+- Use clear labels: `Kontext`, `Siezen`, `Plural`, `Akkusativ`, `Dativ`, `uns`.
+- Do not ask learners to infer formal address from a name alone. Mark formal tasks with `(formell)` or the `Siezen` tag.
+- Use minimal pairs to show why the same surface form can have different grammar.
+- For `uns`, teach that Akkusativ and Dativ share the same form: `sehen Anna und mich -> sieht uns`, but `helfen Anna und mir -> hilft uns`.
+- For formal address, contrast `Sie` and `Ihnen`: `sieht Herrn Bauer (formell) -> sieht Sie`, but `hilft Herrn Bauer (formell) -> hilft Ihnen`.
+- For plural third person, contrast lowercase `sie/ihnen` with formal uppercase `Sie/Ihnen`.
+- Include capitalization traps in wrong answers: `Ihnen` vs `ihnen`, `Sie` vs `sie`.
+- Keep explanations short: name the context, name the case trigger, give the pronoun.
+- Avoid ambiguous tasks such as `Er hilft Ihnen` without a context label.

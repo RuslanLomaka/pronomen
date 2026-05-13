@@ -79,6 +79,7 @@ button {
 
 .controls-disclosure,
 .control-band,
+.context-block,
 .task-card,
 .game-over,
 .weak-spots,
@@ -147,10 +148,42 @@ main {
 }
 
 .control-band h2,
+.context-block h2,
 .weak-spots h2 {
   font-size: 1rem;
   margin-bottom: 10px;
   color: var(--muted);
+}
+
+.context-block {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.65fr) 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+}
+
+.context-block p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.context-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.context-grid button {
+  min-height: 42px;
+  padding: 0 10px;
+  color: var(--text);
+  background: var(--control);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 800;
 }
 
 .button-row,
@@ -546,6 +579,7 @@ main {
   }
 
   .control-band,
+  .context-block,
   .answers-grid,
   .cheat-grid {
     grid-template-columns: 1fr;
@@ -582,6 +616,15 @@ main {
   .control-band {
     padding: 12px;
     gap: 12px;
+  }
+
+  .context-block {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .context-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .level-grid {
@@ -649,6 +692,7 @@ main {
   }
 
   .control-band,
+  .context-block,
   .task-card,
   .weak-spots,
   .cheat-sheet {

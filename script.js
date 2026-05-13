@@ -16,6 +16,7 @@ const modeHelp = {
   classic: "Normale Übung ohne Zeitdruck.",
   speed: "60 Sekunden Zeit. Beantworte so viele Aufgaben wie möglich.",
   minimalPair: "Sehr ähnliche Sätze. Du siehst, wie der Fall das Pronomen ändert.",
+  context: "Übt Pronomen, die eine Situation brauchen: uns, Sie/Ihnen und sie/ihnen.",
   boss: "Schwere Aufgaben mit Fallen, zwei Pronomen und gemischten Fällen.",
   mistakes: "Übt nur Aufgaben, die du vorher falsch beantwortet hast."
 };
@@ -1163,6 +1164,146 @@ const tasks = [
       { noun: "die Schule", pronoun: "sie", case: "Akkusativ", gender: "feminin", number: "singular" }
     ],
     hint: "für + Akkusativ; den Kindern -> ihnen"
+  },
+  {
+    id: "ctx-001",
+    level: 3,
+    modeTags: ["context", "minimalPair", "akkusativ", "uns"],
+    original: "Der Lehrer sieht Anna und mich.",
+    correct: "Er sieht uns.",
+    options: ["Er sieht uns.", "Er sieht wir.", "Er sieht euch.", "Er sieht ihnen."],
+    explanation: "sehen + Akkusativ. Anna und mich -> uns.",
+    replacements: [
+      { noun: "Der Lehrer", pronoun: "er", case: "Nominativ", gender: "maskulin", number: "singular" },
+      { noun: "Anna und mich", pronoun: "uns", case: "Akkusativ", gender: "1. Person", number: "plural" }
+    ],
+    hint: "sehen + Akkusativ, aber wir -> uns"
+  },
+  {
+    id: "ctx-002",
+    level: 3,
+    modeTags: ["context", "minimalPair", "dativ", "uns"],
+    original: "Der Lehrer hilft Anna und mir.",
+    correct: "Er hilft uns.",
+    options: ["Er hilft uns.", "Er hilft wir.", "Er hilft euch.", "Er hilft ihnen."],
+    explanation: "helfen + Dativ. Anna und mir -> uns.",
+    replacements: [
+      { noun: "Der Lehrer", pronoun: "er", case: "Nominativ", gender: "maskulin", number: "singular" },
+      { noun: "Anna und mir", pronoun: "uns", case: "Dativ", gender: "1. Person", number: "plural" }
+    ],
+    hint: "helfen + Dativ, aber wir -> uns"
+  },
+  {
+    id: "ctx-003",
+    level: 3,
+    modeTags: ["context", "akkusativ", "siezen", "formal"],
+    original: "Der Arzt sieht Herrn Bauer. (formell)",
+    correct: "Er sieht Sie.",
+    options: ["Er sieht Sie.", "Er sieht Ihnen.", "Er sieht ihn.", "Er sieht sie."],
+    explanation: "formell: Herr Bauer wird direkt angesprochen. sehen + Akkusativ -> Sie.",
+    replacements: [
+      { noun: "Der Arzt", pronoun: "er", case: "Nominativ", gender: "maskulin", number: "singular" },
+      { noun: "Herrn Bauer (formell)", pronoun: "Sie", case: "Akkusativ", gender: "formell", number: "singular" }
+    ],
+    hint: "Siezen + Akkusativ = Sie"
+  },
+  {
+    id: "ctx-004",
+    level: 3,
+    modeTags: ["context", "dativ", "siezen", "formal"],
+    original: "Der Arzt hilft Herrn Bauer. (formell)",
+    correct: "Er hilft Ihnen.",
+    options: ["Er hilft Ihnen.", "Er hilft Sie.", "Er hilft ihm.", "Er hilft ihnen."],
+    explanation: "formell: Herr Bauer wird direkt angesprochen. helfen + Dativ -> Ihnen.",
+    replacements: [
+      { noun: "Der Arzt", pronoun: "er", case: "Nominativ", gender: "maskulin", number: "singular" },
+      { noun: "Herrn Bauer (formell)", pronoun: "Ihnen", case: "Dativ", gender: "formell", number: "singular" }
+    ],
+    hint: "Siezen + Dativ = Ihnen"
+  },
+  {
+    id: "ctx-005",
+    level: 3,
+    modeTags: ["context", "akkusativ", "plural"],
+    original: "Der Arzt sieht die Kinder.",
+    correct: "Er sieht sie.",
+    options: ["Er sieht sie.", "Er sieht ihnen.", "Er sieht Sie.", "Er sieht Ihnen."],
+    explanation: "die Kinder ist Plural. sehen + Akkusativ -> sie.",
+    replacements: [
+      { noun: "Der Arzt", pronoun: "er", case: "Nominativ", gender: "maskulin", number: "singular" },
+      { noun: "die Kinder", pronoun: "sie", case: "Akkusativ", gender: "plural", number: "plural" }
+    ],
+    hint: "Plural Akkusativ = sie"
+  },
+  {
+    id: "ctx-006",
+    level: 3,
+    modeTags: ["context", "dativ", "plural"],
+    original: "Der Arzt hilft den Kindern.",
+    correct: "Er hilft ihnen.",
+    options: ["Er hilft ihnen.", "Er hilft Ihnen.", "Er hilft sie.", "Er hilft Sie."],
+    explanation: "den Kindern ist Plural Dativ. helfen + Dativ -> ihnen.",
+    replacements: [
+      { noun: "Der Arzt", pronoun: "er", case: "Nominativ", gender: "maskulin", number: "singular" },
+      { noun: "den Kindern", pronoun: "ihnen", case: "Dativ", gender: "plural", number: "plural" }
+    ],
+    hint: "Plural Dativ = ihnen"
+  },
+  {
+    id: "ctx-007",
+    level: 3,
+    modeTags: ["context", "dativ", "siezen", "formal"],
+    original: "Der Chef dankt Frau Keller. (formell)",
+    correct: "Er dankt Ihnen.",
+    options: ["Er dankt Ihnen.", "Er dankt ihnen.", "Er dankt Sie.", "Er dankt sie."],
+    explanation: "formell: Frau Keller wird direkt angesprochen. danken + Dativ -> Ihnen.",
+    replacements: [
+      { noun: "Der Chef", pronoun: "er", case: "Nominativ", gender: "maskulin", number: "singular" },
+      { noun: "Frau Keller (formell)", pronoun: "Ihnen", case: "Dativ", gender: "formell", number: "singular" }
+    ],
+    hint: "Großes Ihnen = formell"
+  },
+  {
+    id: "ctx-008",
+    level: 3,
+    modeTags: ["context", "dativ", "plural"],
+    original: "Der Chef dankt den Eltern.",
+    correct: "Er dankt ihnen.",
+    options: ["Er dankt ihnen.", "Er dankt Ihnen.", "Er dankt sie.", "Er dankt Sie."],
+    explanation: "den Eltern ist Plural Dativ. danken + Dativ -> ihnen.",
+    replacements: [
+      { noun: "Der Chef", pronoun: "er", case: "Nominativ", gender: "maskulin", number: "singular" },
+      { noun: "den Eltern", pronoun: "ihnen", case: "Dativ", gender: "plural", number: "plural" }
+    ],
+    hint: "Kleines ihnen = Plural Dativ"
+  },
+  {
+    id: "ctx-009",
+    level: 3,
+    modeTags: ["context", "dass", "akkusativ"],
+    original: "Anna sagt, dass Anna Max liebt.",
+    correct: "Anna sagt, dass sie ihn liebt.",
+    options: ["Anna sagt, dass sie ihn liebt.", "Anna sagt, dass sie ihm liebt.", "Anna sagt, dass ihr ihn liebt.", "Anna sagt, dass er sie liebt."],
+    explanation: "dass-Satz: Verb am Ende. Anna -> sie. lieben + Akkusativ, Max -> ihn.",
+    replacements: [
+      { noun: "Anna", pronoun: "sie", case: "Nominativ", gender: "feminin", number: "singular" },
+      { noun: "Max", pronoun: "ihn", case: "Akkusativ", gender: "maskulin", number: "singular" }
+    ],
+    hint: "lieben + Akkusativ; im dass-Satz steht liebt am Ende"
+  },
+  {
+    id: "ctx-010",
+    level: 3,
+    modeTags: ["context", "dass", "dativ"],
+    original: "Anna sagt, dass Max Anna hilft.",
+    correct: "Anna sagt, dass er ihr hilft.",
+    options: ["Anna sagt, dass er ihr hilft.", "Anna sagt, dass er sie hilft.", "Anna sagt, dass sie ihm hilft.", "Anna sagt, dass ihm sie hilft."],
+    explanation: "dass-Satz: Verb am Ende. Max -> er. helfen + Dativ, Anna -> ihr.",
+    replacements: [
+      { noun: "Max", pronoun: "er", case: "Nominativ", gender: "maskulin", number: "singular" },
+      { noun: "Anna", pronoun: "ihr", case: "Dativ", gender: "feminin", number: "singular" }
+    ],
+    hint: "helfen + Dativ; im dass-Satz steht hilft am Ende"
   }
 ];
 
@@ -1271,6 +1412,7 @@ function renderModeButtons() {
     { id: "classic", label: "Klassisch" },
     { id: "speed", label: "Zeit" },
     { id: "minimalPair", label: "Paare" },
+    { id: "context", label: "Kontext" },
     { id: "boss", label: "Boss" },
     { id: "mistakes", label: "Fehler" }
   ];
@@ -1364,7 +1506,11 @@ function renderTags(task) {
       plural: "Plural",
       twoObjects: "Zwei Objekte",
       boss: "Boss",
-      location: "Wechselpräposition"
+      location: "Wechselpräposition",
+      context: "Kontext",
+      siezen: "Siezen",
+      dass: "dass-Satz",
+      uns: "uns"
     };
     if (labelMap[tag]) labels.add(labelMap[tag]);
   });
@@ -1504,6 +1650,9 @@ function getTasksForCurrentMode() {
   if (state.currentMode === "minimalPair") {
     return tasks.filter((task) => task.modeTags.includes("minimalPair"));
   }
+  if (state.currentMode === "context") {
+    return tasks.filter((task) => task.modeTags.includes("context"));
+  }
   if (state.currentMode === "boss") {
     return tasks.filter((task) => task.level === 8 || task.modeTags.includes("boss"));
   }
@@ -1530,6 +1679,9 @@ function buildFallbackHint(task) {
 }
 
 function buildGermanExplanation(task) {
+  if (task.modeTags.includes("context")) {
+    return `${task.explanation} Richtiger Satz: ${task.correct}`;
+  }
   const parts = task.replacements.map((item) => {
     return `${item.noun} wird ${item.pronoun}: ${item.case}, ${item.gender}, ${item.number}.`;
   });
