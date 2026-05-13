@@ -1763,7 +1763,7 @@ function renderTask() {
   els.hintButton.disabled = false;
   els.hintButton.classList.remove("hidden");
 
-  renderTags(state.currentTask);
+  els.tagList.innerHTML = "";
   renderAnswerButtons(state.currentTask);
   hideFeedback();
   updateStats();
@@ -1869,6 +1869,7 @@ function checkAnswer(index) {
 
 function showFeedback(isCorrect) {
   const speedCorrect = state.currentMode === "speed" && isCorrect;
+  renderTags(state.currentTask);
   els.feedbackPanel.className = `feedback-panel ${isCorrect ? "correct" : "wrong"}`;
   els.feedbackPanel.classList.remove("hidden");
   els.feedbackTitle.textContent = isCorrect ? "Richtig" : "Fast";
