@@ -20,7 +20,7 @@
           <div>
             <h2>Modus</h2>
             <div class="button-row" id="modeButtons"></div>
-            <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">Dunkel</button>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" data-help="Wechselt zwischen hellem und dunklem Design.">Dunkel</button>
           </div>
           <div>
             <h2>Stufe</h2>
@@ -45,7 +45,7 @@
         </div>
 
         <div class="hint-box hidden" id="hintBox"></div>
-        <button class="ghost-button" id="hintButton" type="button">Tipp zeigen</button>
+        <button class="ghost-button" id="hintButton" type="button" data-help="Zeigt einen kleinen Grammatik-Tipp. Danach gibt es weniger Punkte.">Tipp zeigen</button>
 
         <div class="answers-grid" id="answerButtons" role="list"></div>
 
@@ -64,14 +64,14 @@
         <h2>Spiel vorbei</h2>
         <p id="gameOverSummary"></p>
         <div class="button-row">
-          <button class="primary-button" id="restartButton" type="button">Neu starten</button>
-          <button class="secondary-button" id="reviewMistakesButton" type="button">Fehler üben</button>
+          <button class="primary-button" id="restartButton" type="button" data-help="Startet die Übung neu.">Neu starten</button>
+          <button class="secondary-button" id="reviewMistakesButton" type="button" data-help="Übt nur Aufgaben, die du falsch beantwortet hast.">Fehler üben</button>
         </div>
       </section>
 
       <section class="bottom-tools">
-        <button class="secondary-button" id="resetButton" type="button">Fortschritt löschen</button>
-        <button class="secondary-button" id="mistakeModeButton" type="button">Fehler üben</button>
+        <button class="secondary-button" id="resetButton" type="button" data-help="Löscht Punkte, Fehlerliste und freigeschaltete Stufen.">Fortschritt löschen</button>
+        <button class="secondary-button" id="mistakeModeButton" type="button" data-help="Übt nur Aufgaben, die du falsch beantwortet hast.">Fehler üben</button>
       </section>
 
       <section class="weak-spots">
@@ -84,6 +84,15 @@
         <div id="cheatSheetContent"></div>
       </details>
     </main>
+  </div>
+
+  <div class="help-tooltip hidden" id="helpTooltip" role="tooltip"></div>
+  <div class="help-dialog hidden" id="helpDialog" role="dialog" aria-modal="true" aria-labelledby="helpDialogTitle">
+    <div class="help-dialog-card">
+      <h2 id="helpDialogTitle">Kurz erklärt</h2>
+      <p id="helpDialogText"></p>
+      <button class="primary-button" id="helpDialogOk" type="button">OK</button>
+    </div>
   </div>
 
   <script src="script.js"></script>

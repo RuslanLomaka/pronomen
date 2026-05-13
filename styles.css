@@ -460,6 +460,53 @@ main {
   display: none !important;
 }
 
+.help-tooltip {
+  position: fixed;
+  z-index: 40;
+  max-width: 260px;
+  padding: 9px 11px;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  pointer-events: none;
+}
+
+.help-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.help-dialog-card {
+  width: min(360px, 100%);
+  padding: 18px;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.help-dialog-card h2 {
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+
+.help-dialog-card p {
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
 @media (max-width: 820px) {
   .app-shell {
     padding-top: 8px;

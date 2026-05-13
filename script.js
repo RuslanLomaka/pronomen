@@ -12,6 +12,14 @@ const levelDescriptions = {
   8: "Boss-Stufe mit längeren Sätzen, Fallen und zwei Pronomen."
 };
 
+const modeHelp = {
+  classic: "Normale Übung ohne Zeitdruck.",
+  speed: "60 Sekunden Zeit. Beantworte so viele Aufgaben wie möglich.",
+  minimalPair: "Sehr ähnliche Sätze. Du siehst, wie der Fall das Pronomen ändert.",
+  boss: "Schwere Aufgaben mit Fallen, zwei Pronomen und gemischten Fällen.",
+  mistakes: "Übt nur Aufgaben, die du vorher falsch beantwortet hast."
+};
+
 const tasks = [
   {
     id: "l1-001",
@@ -1184,6 +1192,8 @@ const state = {
 };
 
 const els = {};
+let pendingHelpAction = null;
+let helpBypassTarget = null;
 
 function initApp() {
   cacheElements();
@@ -1227,6 +1237,10 @@ function cacheElements() {
   els.mistakeModeButton = document.getElementById("mistakeModeButton");
   els.weakSpotStats = document.getElementById("weakSpotStats");
   els.cheatSheetContent = document.getElementById("cheatSheetContent");
+  els.helpTooltip = document.getElementById("helpTooltip");
+  els.helpDialog = document.getElementById("helpDialog");
+  els.helpDialogText = document.getElementById("helpDialogText");
+  els.helpDialogOk = document.getElementById("helpDialogOk");
 }
 
 function bindEvents() {
@@ -1237,7 +1251,13 @@ function bindEvents() {
   els.reviewMistakesButton.addEventListener("click", () => startMode("mistakes"));
   els.mistakeModeButton.addEventListener("click", () => startMode("mistakes"));
   els.resetButton.addEventListener("click", resetProgress);
+  document.addEventListener("click", handleMobileHelpClick, true);
+  document.addEventListener("mouseover", handleHelpHover);
+  document.addEventListener("mouseout", hideHelpTooltip);
+  document.addEventListener("focusin", handleHelpHover);
+  document.addEventListener("focusout", hideHelpTooltip);
   document.addEventListener("keydown", handleKeyboard);
+  els.helpDialogOk.addEventListener("click", confirmHelpDialog);
   const mobileControlsQuery = window.matchMedia("(max-width: 820px)");
   if (mobileControlsQuery.addEventListener) {
     mobileControlsQuery.addEventListener("change", setControlsLayout);
@@ -1262,6 +1282,7 @@ function renderModeButtons() {
     button.className = "mode-button";
     button.textContent = mode.label;
     button.dataset.mode = mode.id;
+    button.dataset.help = modeHelp[mode.id];
     button.addEventListener("click", () => startMode(mode.id));
     els.modeButtons.appendChild(button);
   });
@@ -1274,7 +1295,9 @@ function renderLevelButtons() {
     button.type = "button";
     button.className = "level-button";
     button.textContent = level;
-    button.title = level > state.levelUnlocked ? "Freies Üben: Stufe noch nicht freigeschaltet" : `Stufe ${level}`;
+    button.dataset.help = level > state.levelUnlocked
+      ? `${levelDescriptions[level]} Noch nicht freigeschaltet, aber frei wählbar.`
+      : levelDescriptions[level];
     if (level > state.levelUnlocked) {
       button.classList.add("locked");
     }
@@ -1742,6 +1765,59 @@ function handleKeyboard(event) {
   if (event.key === "Enter" && state.answered) {
     nextTask();
   }
+}
+
+function isMobileLayout() {
+  return window.matchMedia("(max-width: 820px)").matches;
+}
+
+function handleMobileHelpClick(event) {
+  const target = event.target.closest("[data-help]");
+  if (!target || !isMobileLayout()) return;
+  if (helpBypassTarget === target) {
+    helpBypassTarget = null;
+    return;
+  }
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  pendingHelpAction = target;
+  showHelpDialog(target.dataset.help);
+}
+
+function showHelpDialog(text) {
+  els.helpDialogText.textContent = text;
+  els.helpDialog.classList.remove("hidden");
+  els.helpDialogOk.focus();
+}
+
+function confirmHelpDialog() {
+  els.helpDialog.classList.add("hidden");
+  const target = pendingHelpAction;
+  pendingHelpAction = null;
+  if (!target || target.disabled || !document.body.contains(target)) return;
+  helpBypassTarget = target;
+  target.click();
+}
+
+function handleHelpHover(event) {
+  const target = event.target.closest("[data-help]");
+  if (!target || isMobileLayout()) return;
+  showHelpTooltip(target, target.dataset.help);
+}
+
+function showHelpTooltip(target, text) {
+  const rect = target.getBoundingClientRect();
+  els.helpTooltip.textContent = text;
+  els.helpTooltip.classList.remove("hidden");
+  const tooltipRect = els.helpTooltip.getBoundingClientRect();
+  const top = Math.max(8, rect.top - tooltipRect.height - 8);
+  const left = Math.min(window.innerWidth - tooltipRect.width - 8, Math.max(8, rect.left));
+  els.helpTooltip.style.top = `${top}px`;
+  els.helpTooltip.style.left = `${left}px`;
+}
+
+function hideHelpTooltip() {
+  els.helpTooltip.classList.add("hidden");
 }
 
 function shuffleArray(array) {
