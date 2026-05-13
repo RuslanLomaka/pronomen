@@ -17,7 +17,7 @@ const modeHelp = {
   speed: "60 Sekunden Zeit. Beantworte so viele Aufgaben wie möglich.",
   minimalPair: "Sehr ähnliche Sätze. Du siehst, wie der Fall das Pronomen ändert.",
   context: "Übt Pronomen, die eine Situation brauchen: uns, Sie/Ihnen und sie/ihnen.",
-  nano: "Sehr kurzer Kontext. Danach ersetzt du die Namen durch Pronomen.",
+  nano: "Sehr kurzer Sprech-Kontext. Übt ich/mich/mir, du/dich/dir, wir/uns und ihr/euch.",
   boss: "Schwere Aufgaben mit Fallen, zwei Pronomen und gemischten Fällen.",
   mistakes: "Übt nur Aufgaben, die du vorher falsch beantwortet hast."
 };
@@ -1309,78 +1309,122 @@ const tasks = [
   {
     id: "nano-001",
     level: 3,
-    modeTags: ["context", "nano", "akkusativ"],
-    context: "Anna mag Max.",
-    original: "Anna sieht Max.",
-    correct: "Sie sieht ihn.",
-    options: ["Sie sieht ihn.", "Sie sieht ihm.", "Er sieht sie.", "Sie sieht er."],
-    explanation: "Kontext: Anna -> sie, Max -> ihn. sehen + Akkusativ.",
+    modeTags: ["context", "nano", "akkusativ", "informal"],
+    context: "Ich spreche. Du hörst.",
+    original: "Du siehst mich.",
+    correct: "Du siehst mich.",
+    options: ["Du siehst mich.", "Du siehst mir.", "Ich sehe dich.", "Du siehst ich."],
+    explanation: "Kontext: ich bin die sprechende Person. sehen + Akkusativ -> mich.",
     replacements: [
-      { noun: "Anna", pronoun: "sie", case: "Nominativ", gender: "feminin", number: "singular" },
-      { noun: "Max", pronoun: "ihn", case: "Akkusativ", gender: "maskulin", number: "singular" }
+      { noun: "ich", pronoun: "mich", case: "Akkusativ", gender: "1. Person", number: "singular" },
+      { noun: "du", pronoun: "du", case: "Nominativ", gender: "2. Person", number: "singular" }
     ],
-    hint: "sehen + Akkusativ"
+    hint: "sehen + Akkusativ: ich -> mich"
   },
   {
     id: "nano-002",
     level: 3,
-    modeTags: ["context", "nano", "dativ"],
-    context: "Anna kennt Max.",
-    original: "Max hilft Anna.",
-    correct: "Er hilft ihr.",
-    options: ["Er hilft ihr.", "Er hilft sie.", "Sie hilft ihm.", "Er hilft ihn."],
-    explanation: "Kontext: Max -> er, Anna -> ihr. helfen + Dativ.",
+    modeTags: ["context", "nano", "dativ", "informal"],
+    context: "Ich spreche. Du hilfst.",
+    original: "Du hilfst mir.",
+    correct: "Du hilfst mir.",
+    options: ["Du hilfst mir.", "Du hilfst mich.", "Ich helfe dir.", "Du hilfst ich."],
+    explanation: "Kontext: ich bin die sprechende Person. helfen + Dativ -> mir.",
     replacements: [
-      { noun: "Max", pronoun: "er", case: "Nominativ", gender: "maskulin", number: "singular" },
-      { noun: "Anna", pronoun: "ihr", case: "Dativ", gender: "feminin", number: "singular" }
+      { noun: "ich", pronoun: "mir", case: "Dativ", gender: "1. Person", number: "singular" },
+      { noun: "du", pronoun: "du", case: "Nominativ", gender: "2. Person", number: "singular" }
     ],
-    hint: "helfen + Dativ"
+    hint: "helfen + Dativ: ich -> mir"
   },
   {
     id: "nano-003",
-    level: 4,
-    modeTags: ["context", "nano", "twoObjects", "dativ", "akkusativ"],
-    context: "Der Vater hat einen Ball. Das Kind wartet.",
-    original: "Der Vater gibt dem Kind den Ball.",
-    correct: "Er gibt ihn ihm.",
-    options: ["Er gibt ihn ihm.", "Er gibt ihm ihn.", "Er gibt ihn es.", "Sie gibt ihn ihm."],
-    explanation: "Kontext: Der Vater -> er, den Ball -> ihn, dem Kind -> ihm.",
+    level: 3,
+    modeTags: ["context", "nano", "akkusativ", "informal"],
+    context: "Du sprichst. Ich höre.",
+    original: "Ich sehe dich.",
+    correct: "Ich sehe dich.",
+    options: ["Ich sehe dich.", "Ich sehe dir.", "Du siehst mich.", "Ich sehe du."],
+    explanation: "Kontext: du bist die angesprochene Person. sehen + Akkusativ -> dich.",
     replacements: [
-      { noun: "Der Vater", pronoun: "er", case: "Nominativ", gender: "maskulin", number: "singular" },
-      { noun: "den Ball", pronoun: "ihn", case: "Akkusativ", gender: "maskulin", number: "singular" },
-      { noun: "dem Kind", pronoun: "ihm", case: "Dativ", gender: "neutral", number: "singular" }
+      { noun: "ich", pronoun: "ich", case: "Nominativ", gender: "1. Person", number: "singular" },
+      { noun: "du", pronoun: "dich", case: "Akkusativ", gender: "2. Person", number: "singular" }
     ],
-    hint: "Akkusativ-Pronomen vor Dativ-Pronomen"
+    hint: "sehen + Akkusativ: du -> dich"
   },
   {
     id: "nano-004",
     level: 3,
-    modeTags: ["context", "nano", "siezen", "formal", "dativ"],
-    context: "Herr Bauer ist hier. Formell.",
-    original: "Der Arzt hilft Herrn Bauer.",
-    correct: "Er hilft Ihnen.",
-    options: ["Er hilft Ihnen.", "Er hilft ihnen.", "Er hilft Sie.", "Er hilft ihn."],
-    explanation: "Kontext: formell. helfen + Dativ -> Ihnen.",
+    modeTags: ["context", "nano", "dativ", "informal"],
+    context: "Du sprichst. Ich helfe.",
+    original: "Ich helfe dir.",
+    correct: "Ich helfe dir.",
+    options: ["Ich helfe dir.", "Ich helfe dich.", "Du hilfst mir.", "Ich helfe du."],
+    explanation: "Kontext: du bist die angesprochene Person. helfen + Dativ -> dir.",
     replacements: [
-      { noun: "Der Arzt", pronoun: "er", case: "Nominativ", gender: "maskulin", number: "singular" },
-      { noun: "Herrn Bauer", pronoun: "Ihnen", case: "Dativ", gender: "formell", number: "singular" }
+      { noun: "ich", pronoun: "ich", case: "Nominativ", gender: "1. Person", number: "singular" },
+      { noun: "du", pronoun: "dir", case: "Dativ", gender: "2. Person", number: "singular" }
     ],
-    hint: "Formell + Dativ = Ihnen"
+    hint: "helfen + Dativ: du -> dir"
   },
   {
     id: "nano-005",
     level: 3,
-    modeTags: ["context", "nano", "dass", "akkusativ"],
-    context: "Anna liebt Max.",
-    original: "Anna sagt, dass Anna Max liebt.",
-    correct: "Sie sagt, dass sie ihn liebt.",
-    options: ["Sie sagt, dass sie ihn liebt.", "Sie sagt, dass sie ihm liebt.", "Sie sagt, dass er sie liebt.", "Sie sagt, dass ihr ihn liebt."],
-    explanation: "Kontext: Anna -> sie, Max -> ihn. lieben + Akkusativ. Im dass-Satz steht liebt am Ende.",
+    modeTags: ["context", "nano", "akkusativ", "uns"],
+    context: "Anna und ich sind hier. Der Lehrer spricht.",
+    original: "Der Lehrer sieht Anna und mich.",
+    correct: "Er sieht uns.",
+    options: ["Er sieht uns.", "Er sieht wir.", "Er sieht euch.", "Er sieht ihnen."],
+    explanation: "Kontext: Anna und ich -> wir/uns. sehen + Akkusativ -> uns.",
     replacements: [
-      { noun: "Anna", pronoun: "sie", case: "Nominativ", gender: "feminin", number: "singular" },
-      { noun: "Max", pronoun: "ihn", case: "Akkusativ", gender: "maskulin", number: "singular" }
+      { noun: "Anna und ich", pronoun: "uns", case: "Akkusativ", gender: "1. Person", number: "plural" },
+      { noun: "Der Lehrer", pronoun: "er", case: "Nominativ", gender: "maskulin", number: "singular" }
     ],
-    hint: "dass: Verb am Ende; lieben + Akkusativ"
+    hint: "Anna und ich -> wir; Akkusativ/Dativ = uns"
+  },
+  {
+    id: "nano-006",
+    level: 3,
+    modeTags: ["context", "nano", "dativ", "uns"],
+    context: "Anna und ich sind hier. Die Lehrerin hilft.",
+    original: "Die Lehrerin hilft Anna und mir.",
+    correct: "Sie hilft uns.",
+    options: ["Sie hilft uns.", "Sie hilft wir.", "Sie hilft euch.", "Sie hilft ihnen."],
+    explanation: "Kontext: Anna und ich -> wir/uns. helfen + Dativ -> uns.",
+    replacements: [
+      { noun: "Anna und ich", pronoun: "uns", case: "Dativ", gender: "1. Person", number: "plural" },
+      { noun: "Die Lehrerin", pronoun: "sie", case: "Nominativ", gender: "feminin", number: "singular" }
+    ],
+    hint: "Anna und ich -> wir; Akkusativ/Dativ = uns"
+  },
+  {
+    id: "nano-007",
+    level: 3,
+    modeTags: ["context", "nano", "akkusativ", "informal", "plural"],
+    context: "Du und Max seid hier. Ich spreche.",
+    original: "Ich sehe dich und Max.",
+    correct: "Ich sehe euch.",
+    options: ["Ich sehe euch.", "Ich sehe ihr.", "Du siehst uns.", "Ich sehe Sie."],
+    explanation: "Kontext: du und Max -> ihr/euch. sehen + Akkusativ -> euch.",
+    replacements: [
+      { noun: "ich", pronoun: "ich", case: "Nominativ", gender: "1. Person", number: "singular" },
+      { noun: "dich und Max", pronoun: "euch", case: "Akkusativ", gender: "2. Person", number: "plural" }
+    ],
+    hint: "du und Max -> ihr; Akkusativ/Dativ = euch"
+  },
+  {
+    id: "nano-008",
+    level: 3,
+    modeTags: ["context", "nano", "dativ", "informal", "plural"],
+    context: "Du und Max seid hier. Ich helfe.",
+    original: "Ich helfe dir und Max.",
+    correct: "Ich helfe euch.",
+    options: ["Ich helfe euch.", "Ich helfe ihr.", "Ihr helft mir.", "Ich helfe Sie."],
+    explanation: "Kontext: du und Max -> ihr/euch. helfen + Dativ -> euch.",
+    replacements: [
+      { noun: "ich", pronoun: "ich", case: "Nominativ", gender: "1. Person", number: "singular" },
+      { noun: "dir und Max", pronoun: "euch", case: "Dativ", gender: "2. Person", number: "plural" }
+    ],
+    hint: "du und Max -> ihr; Akkusativ/Dativ = euch"
   }
 ];
 
