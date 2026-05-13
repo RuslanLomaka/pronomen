@@ -21,6 +21,23 @@ const modeHelp = {
   mistakes: "Übt nur Aufgaben, die du vorher falsch beantwortet hast."
 };
 
+const tagDescriptions = {
+  Nominativ: "Nominativ zeigt meistens, wer etwas macht. Frage: Wer oder was? Beispiele: ich, du, er, sie, es, wir, ihr, sie, Sie.",
+  Akkusativ: "Akkusativ ist oft das direkte Objekt. Frage: Wen oder was? Beispiele: mich, dich, ihn, sie, es, uns, euch, sie, Sie.",
+  Dativ: "Dativ ist oft die Person, die etwas bekommt oder der etwas passiert. Frage: Wem? Beispiele: mir, dir, ihm, ihr, ihm, uns, euch, ihnen, Ihnen.",
+  "Präposition": "Eine Präposition steht vor einer Ergänzung, zum Beispiel mit, zu, bei, von, für, ohne, gegen, durch. Sie bestimmt oft den Fall.",
+  Formell: "Formell bedeutet Siezen. Für eine direkt angesprochene Person benutzt man Sie im Nominativ/Akkusativ und Ihnen im Dativ.",
+  Informell: "Informell bedeutet du oder ihr. Singular: du, dich, dir. Plural: ihr, euch, euch.",
+  Plural: "Plural bedeutet mehrere Personen oder Dinge. Wichtig: sie kann Nominativ oder Akkusativ sein, ihnen ist Dativ.",
+  "Zwei Objekte": "Der Satz hat zwei Ergänzungen. Oft ist die Sache Akkusativ und die Person Dativ: Ich gebe es dir.",
+  Boss: "Boss-Aufgaben mischen mehrere Regeln: Fälle, Präpositionen, zwei Objekte oder formelles Sie.",
+  "Wechselpräposition": "Wechselpräpositionen können Dativ oder Akkusativ nehmen. Wo? -> Dativ. Wohin? -> Akkusativ.",
+  Kontext: "Kontext bedeutet: Die Situation hilft dir zu wissen, wer ich, du, wir, ihr, Sie oder sie ist.",
+  Siezen: "Siezen ist die höfliche Form. Sie bleibt groß: Sie im Nominativ/Akkusativ, Ihnen im Dativ.",
+  "dass-Satz": "Im dass-Satz steht das konjugierte Verb am Ende: Anna sagt, dass er ihr hilft.",
+  uns: "uns ist besonders praktisch: Es ist Akkusativ und Dativ von wir. Beispiel: Er sieht uns. Er hilft uns."
+};
+
 const tasks = [
   {
     id: "l1-001",
@@ -1676,6 +1693,7 @@ function bindEvents() {
   els.mistakeModeButton.addEventListener("click", () => startMode("mistakes"));
   els.resetButton.addEventListener("click", resetProgress);
   document.addEventListener("click", handleMobileHelpClick, true);
+  els.tagList.addEventListener("click", handleTagClick);
   document.addEventListener("mouseover", handleHelpHover);
   document.addEventListener("mouseout", hideHelpTooltip);
   document.addEventListener("focusin", handleHelpHover);
@@ -1807,10 +1825,13 @@ function renderTags(task) {
 
   els.tagList.innerHTML = "";
   labels.forEach((label) => {
-    const span = document.createElement("span");
-    span.className = "tag";
-    span.textContent = label;
-    els.tagList.appendChild(span);
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "tag";
+    button.textContent = `#${label}`;
+    button.dataset.tag = label;
+    button.setAttribute("aria-label", `${label} erklären`);
+    els.tagList.appendChild(button);
   });
 }
 
@@ -2228,6 +2249,14 @@ function handleMobileHelpClick(event) {
   event.stopImmediatePropagation();
   pendingHelpAction = target;
   showHelpDialog(target.dataset.help);
+}
+
+function handleTagClick(event) {
+  const target = event.target.closest("[data-tag]");
+  if (!target) return;
+  const label = target.dataset.tag;
+  const description = tagDescriptions[label] || `${label}: kurze Grammatik-Markierung für diese Aufgabe.`;
+  showHelpDialog(description);
 }
 
 function showHelpDialog(text) {
