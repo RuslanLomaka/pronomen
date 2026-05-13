@@ -77,7 +77,6 @@ button {
   padding: 22px 0 36px;
 }
 
-.top-bar,
 .controls-disclosure,
 .control-band,
 .task-card,
@@ -90,25 +89,16 @@ button {
   box-shadow: var(--shadow);
 }
 
-.top-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 20px;
-}
-
-.eyebrow {
-  margin: 0 0 4px;
+.app-title p {
+  margin: 0;
   color: var(--accent);
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.78rem;
-  letter-spacing: 0;
+  font-size: clamp(1.35rem, 3vw, 2.1rem);
+  font-weight: 900;
+  line-height: 1.1;
 }
 
 .theme-toggle {
-  margin-top: 12px;
+  margin-top: 10px;
   min-height: 40px;
   padding: 0 14px;
   color: var(--text);
@@ -119,52 +109,15 @@ button {
   font-weight: 800;
 }
 
-h1,
 h2,
 p {
   margin-top: 0;
 }
 
-h1 {
-  margin-bottom: 0;
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  line-height: 1;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(82px, 1fr));
-  gap: 10px;
-  min-width: min(410px, 100%);
-}
-
-.stat {
-  padding: 12px;
-  background: var(--subtle);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-}
-
-.stat span {
-  display: block;
-  color: var(--muted);
-  font-size: 0.8rem;
-  margin-bottom: 4px;
-}
-
-.stat strong {
-  font-size: 1.35rem;
-}
-
-.hearts strong {
-  color: var(--danger);
-  letter-spacing: 0;
-}
-
 main {
   display: grid;
-  gap: 16px;
-  margin-top: 16px;
+  gap: 12px;
+  margin-top: 12px;
 }
 
 .controls-disclosure {
@@ -268,19 +221,10 @@ main {
   transform: scale(0.98);
 }
 
-.status-strip {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  color: var(--muted);
-  font-weight: 700;
-}
-
 .timer-box {
   color: white;
   background: var(--warning);
-  padding: 9px 14px;
+  padding: 8px 10px;
   border-radius: var(--radius);
 }
 
@@ -288,8 +232,28 @@ main {
   padding: 24px;
 }
 
-.task-mobile-stats {
-  display: none;
+.task-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.task-stats span {
+  padding: 8px 10px;
+  background: var(--subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.task-stats strong {
+  color: var(--text);
+}
+
+.task-stats span:nth-child(3) strong {
+  color: var(--danger);
 }
 
 .task-header {
@@ -355,7 +319,7 @@ main {
   color: var(--text);
   background: var(--answer);
   border: 2px solid var(--border);
-  padding: 18px;
+  padding: 14px 18px;
   font-size: clamp(1.05rem, 2vw, 1.35rem);
   font-weight: 700;
 }
@@ -499,7 +463,6 @@ main {
     margin-top: 10px;
   }
 
-  .top-bar,
   .task-header,
   .feedback-panel {
     grid-template-columns: 1fr;
@@ -513,22 +476,9 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .top-bar {
-    padding: 12px;
-    gap: 10px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
   .theme-toggle {
     min-height: 38px;
     margin-top: 8px;
-  }
-
-  .stats-grid {
-    display: none;
   }
 
   .controls-disclosure summary {
@@ -563,37 +513,22 @@ main {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .status-strip {
-    font-size: 0.92rem;
-  }
-
   .task-card {
     padding: 14px;
   }
 
-  .task-mobile-stats {
-    display: flex;
+  .task-stats {
     justify-content: space-between;
-    gap: 8px;
     margin-bottom: 10px;
-    color: var(--muted);
-    font-weight: 800;
   }
 
-  .task-mobile-stats span {
+  .task-stats span {
     flex: 1;
     padding: 8px 10px;
-    background: var(--subtle);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
   }
 
-  .task-mobile-stats strong {
-    color: var(--text);
-  }
-
-  .task-mobile-stats span:last-child strong {
-    color: var(--danger);
+  .timer-box {
+    flex: 0 0 auto;
   }
 
   .instruction {
@@ -630,7 +565,6 @@ main {
     padding-top: 9px;
   }
 
-  .top-bar,
   .control-band,
   .task-card,
   .weak-spots,
@@ -638,12 +572,8 @@ main {
     padding: 14px;
   }
 
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .answer-button {
-    min-height: 58px;
-    padding: 12px;
+    min-height: 50px;
+    padding: 9px 12px;
   }
 }

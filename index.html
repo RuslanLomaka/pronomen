@@ -3,40 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pronoun Forge — German Case Trainer</title>
+  <title>Deutsche Pronomen-Übung</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="app-shell">
-    <header class="top-bar">
-      <div>
-        <p class="eyebrow">German Case Trainer</p>
-        <h1>Pronoun Forge</h1>
-        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">Dunkel</button>
-      </div>
-      <div class="stats-grid" aria-label="Game statistics">
-        <div class="stat">
-          <span>Punkte</span>
-          <strong id="scoreLabel">0</strong>
-        </div>
-        <div class="stat">
-          <span>Serie</span>
-          <strong id="streakLabel">0</strong>
-        </div>
-        <div class="stat hearts">
-          <span>Leben</span>
-          <strong id="heartsLabel">♥ ♥ ♥</strong>
-        </div>
-      </div>
+    <header class="app-title">
+      <p>Deutsche Pronomen-Übung</p>
     </header>
 
     <main>
       <details class="controls-disclosure" id="controlsDisclosure" open>
         <summary>Steuerung</summary>
-        <section class="control-band" aria-label="Game controls">
+        <section class="control-band" aria-label="Steuerung">
           <div>
             <h2>Modus</h2>
             <div class="button-row" id="modeButtons"></div>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">Dunkel</button>
           </div>
           <div>
             <h2>Stufe</h2>
@@ -46,15 +29,12 @@
         </section>
       </details>
 
-      <section class="status-strip" aria-live="polite">
-        <div id="timerBox" class="timer-box hidden">60s</div>
-        <div id="progressText">Fortschritt: 0 / 8</div>
-      </section>
-
       <section class="task-card" aria-live="polite">
-        <div class="task-mobile-stats" aria-label="Aktuelle Punkte und Leben">
-          <span>Punkte <strong id="mobileScoreLabel">0</strong></span>
-          <span>Leben <strong id="mobileHeartsLabel">♥ ♥ ♥</strong></span>
+        <div class="task-stats" aria-label="Aktuelle Punkte und Leben">
+          <span>Punkte <strong id="scoreLabel">0</strong></span>
+          <span>Serie <strong id="streakLabel">0</strong></span>
+          <span>Leben <strong id="heartsLabel">♥ ♥ ♥</strong></span>
+          <span id="timerBox" class="timer-box hidden">60s</span>
         </div>
         <div class="task-header">
           <div>

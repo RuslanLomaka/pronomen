@@ -1202,15 +1202,12 @@ function cacheElements() {
   els.scoreLabel = document.getElementById("scoreLabel");
   els.streakLabel = document.getElementById("streakLabel");
   els.heartsLabel = document.getElementById("heartsLabel");
-  els.mobileScoreLabel = document.getElementById("mobileScoreLabel");
-  els.mobileHeartsLabel = document.getElementById("mobileHeartsLabel");
   els.modeButtons = document.getElementById("modeButtons");
   els.levelButtons = document.getElementById("levelButtons");
   els.levelDescription = document.getElementById("levelDescription");
   els.controlsDisclosure = document.getElementById("controlsDisclosure");
   els.themeToggle = document.getElementById("themeToggle");
   els.timerBox = document.getElementById("timerBox");
-  els.progressText = document.getElementById("progressText");
   els.originalSentence = document.getElementById("originalSentence");
   els.tagList = document.getElementById("tagList");
   els.hintBox = document.getElementById("hintBox");
@@ -1603,12 +1600,6 @@ function updateStats() {
   els.streakLabel.textContent = state.streak;
   const heartsText = state.currentMode === "speed" ? "∞" : "♥ ".repeat(Math.max(state.hearts, 0)).trim();
   els.heartsLabel.textContent = heartsText;
-  els.mobileScoreLabel.textContent = state.score;
-  els.mobileHeartsLabel.textContent = heartsText;
-  const count = state.correctCountByLevel[state.currentLevel] || 0;
-  els.progressText.textContent = state.currentMode === "speed"
-    ? `Zeit: ${state.speedCorrect} richtig, ${state.speedWrong} falsch`
-    : `Fortschritt: ${Math.min(count, 8)} / 8`;
   els.levelDescription.textContent = levelDescriptions[state.currentLevel];
   renderWeakSpots();
   renderModeButtonsState();
