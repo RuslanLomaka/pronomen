@@ -90,11 +90,18 @@ button {
 }
 
 .app-title p {
-  margin: 0;
+  margin: 0 0 3px;
   color: var(--accent);
   font-size: clamp(1.35rem, 3vw, 2.1rem);
   font-weight: 900;
   line-height: 1.1;
+}
+
+.app-title span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 800;
 }
 
 .theme-toggle {
@@ -260,12 +267,6 @@ main {
   display: flex;
   justify-content: space-between;
   gap: 18px;
-}
-
-.instruction {
-  color: var(--accent);
-  font-weight: 700;
-  margin-bottom: 10px;
 }
 
 #originalSentence {
@@ -530,10 +531,6 @@ main {
 
   .timer-box {
     flex: 0 0 auto;
-  }
-
-  .instruction {
-    margin-bottom: 6px;
   }
 
   #originalSentence {
