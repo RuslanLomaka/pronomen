@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pronoun Forge — German Case Trainer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="top-bar">
+      <div>
+        <p class="eyebrow">German Case Trainer</p>
+        <h1>Pronoun Forge</h1>
+      </div>
+      <div class="stats-grid" aria-label="Game statistics">
+        <div class="stat">
+          <span>Level</span>
+          <strong id="currentLevelLabel">1</strong>
+        </div>
+        <div class="stat">
+          <span>Score</span>
+          <strong id="scoreLabel">0</strong>
+        </div>
+        <div class="stat">
+          <span>Streak</span>
+          <strong id="streakLabel">0</strong>
+        </div>
+        <div class="stat hearts">
+          <span>Lives</span>
+          <strong id="heartsLabel">♥ ♥ ♥</strong>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="control-band" aria-label="Game controls">
+        <div>
+          <h2>Mode</h2>
+          <div class="button-row" id="modeButtons"></div>
+        </div>
+        <div>
+          <h2>Level</h2>
+          <div class="level-grid" id="levelButtons"></div>
+        </div>
+      </section>
+
+      <section class="status-strip" aria-live="polite">
+        <div id="timerBox" class="timer-box hidden">60s</div>
+        <div id="progressText">Level 1 progress: 0 / 8</div>
+      </section>
+
+      <section class="task-card" aria-live="polite">
+        <div class="task-header">
+          <div>
+            <p class="instruction">Replace the marked nouns with pronouns.</p>
+            <h2 id="originalSentence">Der Mann sieht den Hund.</h2>
+            <p id="translationText" class="translation">The man sees the dog.</p>
+          </div>
+          <div id="tagList" class="tag-list"></div>
+        </div>
+
+        <div class="hint-box hidden" id="hintBox"></div>
+        <button class="ghost-button" id="hintButton" type="button">Show hint</button>
+
+        <div class="answers-grid" id="answerButtons" role="list"></div>
+
+        <div class="feedback-panel hidden" id="feedbackPanel">
+          <div>
+            <p id="feedbackTitle" class="feedback-title"></p>
+            <p id="correctAnswerText" class="correct-answer"></p>
+            <p id="explanationText" class="explanation"></p>
+            <ul id="caseLogicList" class="case-logic"></ul>
+          </div>
+          <button class="primary-button" id="nextButton" type="button">Next</button>
+        </div>
+      </section>
+
+      <section class="game-over hidden" id="gameOverPanel" aria-live="assertive">
+        <h2>Game Over</h2>
+        <p id="gameOverSummary"></p>
+        <div class="button-row">
+          <button class="primary-button" id="restartButton" type="button">Restart</button>
+          <button class="secondary-button" id="reviewMistakesButton" type="button">Review Mistakes</button>
+        </div>
+      </section>
+
+      <section class="bottom-tools">
+        <button class="primary-button" id="startButton" type="button">Start Game</button>
+        <button class="secondary-button" id="resetButton" type="button">Reset Progress</button>
+        <button class="secondary-button" id="mistakeModeButton" type="button">Mistake Review</button>
+      </section>
+
+      <section class="weak-spots">
+        <h2>Weak spots</h2>
+        <div id="weakSpotStats" class="weak-spot-list">No mistakes yet.</div>
+      </section>
+
+      <details class="cheat-sheet" id="cheatSheet">
+        <summary>Pronoun Cheat Sheet</summary>
+        <div id="cheatSheetContent"></div>
+      </details>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
