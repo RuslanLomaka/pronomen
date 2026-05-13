@@ -1,6 +1,11 @@
 :root {
   --bg: #eef3f1;
   --card: #ffffff;
+  --panel: rgba(255, 255, 255, 0.94);
+  --subtle: #f5f8f7;
+  --control: #eef4f2;
+  --answer: #f7faf9;
+  --border: rgba(23, 33, 31, 0.1);
   --text: #17211f;
   --muted: #66736f;
   --accent: #256f68;
@@ -8,8 +13,42 @@
   --success: #21835b;
   --danger: #c74638;
   --warning: #c78321;
+  --hint-text: #5f4209;
+  --hint-bg: #fff3d8;
+  --correct-bg: #dff3e9;
+  --correct-text: #114d35;
+  --wrong-bg: #fde4df;
+  --wrong-text: #76231b;
+  --feedback-correct: #e2f5eb;
+  --feedback-wrong: #fff0dd;
   --shadow: 0 18px 45px rgba(25, 43, 38, 0.14);
   --radius: 8px;
+}
+
+body.dark-theme {
+  --bg: #101615;
+  --card: #18211f;
+  --panel: rgba(24, 33, 31, 0.96);
+  --subtle: #202c29;
+  --control: #22312e;
+  --answer: #1f2b28;
+  --border: rgba(220, 239, 235, 0.16);
+  --text: #eef7f4;
+  --muted: #aab9b5;
+  --accent: #62c7b8;
+  --accent-soft: #1e3f3a;
+  --success: #62c78f;
+  --danger: #ee796b;
+  --warning: #e2a94d;
+  --hint-text: #ffe1a1;
+  --hint-bg: #3a2b12;
+  --correct-bg: #163c2c;
+  --correct-text: #d9f8e8;
+  --wrong-bg: #48221f;
+  --wrong-text: #ffe1dc;
+  --feedback-correct: #183d2d;
+  --feedback-wrong: #3b2a16;
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
 }
 
 * {
@@ -43,8 +82,8 @@ button {
 .game-over,
 .weak-spots,
 .cheat-sheet {
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid rgba(23, 33, 31, 0.08);
+  background: var(--panel);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
@@ -64,6 +103,18 @@ button {
   text-transform: uppercase;
   font-size: 0.78rem;
   letter-spacing: 0;
+}
+
+.theme-toggle {
+  margin-top: 12px;
+  min-height: 40px;
+  padding: 0 14px;
+  color: var(--text);
+  background: var(--control);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 800;
 }
 
 h1,
@@ -87,9 +138,9 @@ h1 {
 
 .stat {
   padding: 12px;
-  background: #f5f8f7;
+  background: var(--subtle);
   border-radius: var(--radius);
-  border: 1px solid rgba(23, 33, 31, 0.08);
+  border: 1px solid var(--border);
 }
 
 .stat span {
@@ -164,9 +215,9 @@ main {
 .mode-button,
 .level-button,
 .ghost-button {
-  background: #eef4f2;
+  background: var(--control);
   color: var(--text);
-  border: 1px solid rgba(23, 33, 31, 0.12);
+  border: 1px solid var(--border);
   padding: 0 14px;
   font-weight: 700;
 }
@@ -179,7 +230,7 @@ main {
 
 .level-button.locked {
   color: var(--text);
-  background: #eef4f2;
+  background: var(--control);
 }
 
 .level-button.active,
@@ -268,8 +319,8 @@ main {
 .hint-box {
   margin: 12px 0;
   padding: 12px;
-  color: #5f4209;
-  background: #fff3d8;
+  color: var(--hint-text);
+  background: var(--hint-bg);
   border: 1px solid rgba(199, 131, 33, 0.35);
   border-radius: var(--radius);
   font-weight: 700;
@@ -285,23 +336,23 @@ main {
 .answer-button {
   text-align: left;
   color: var(--text);
-  background: #f7faf9;
-  border: 2px solid rgba(23, 33, 31, 0.1);
+  background: var(--answer);
+  border: 2px solid var(--border);
   padding: 18px;
   font-size: clamp(1.05rem, 2vw, 1.35rem);
   font-weight: 700;
 }
 
 .answer-button.correct {
-  background: #dff3e9;
+  background: var(--correct-bg);
   border-color: var(--success);
-  color: #114d35;
+  color: var(--correct-text);
 }
 
 .answer-button.wrong {
-  background: #fde4df;
+  background: var(--wrong-bg);
   border-color: var(--danger);
-  color: #76231b;
+  color: var(--wrong-text);
 }
 
 .answer-button:disabled {
@@ -319,12 +370,12 @@ main {
 }
 
 .feedback-panel.correct {
-  background: #e2f5eb;
+  background: var(--feedback-correct);
   border: 1px solid rgba(33, 131, 91, 0.25);
 }
 
 .feedback-panel.wrong {
-  background: #fff0dd;
+  background: var(--feedback-wrong);
   border: 1px solid rgba(199, 70, 56, 0.25);
 }
 
@@ -374,8 +425,8 @@ main {
 }
 
 .weak-chip {
-  background: #f2f5f4;
-  border: 1px solid rgba(23, 33, 31, 0.08);
+  background: var(--control);
+  border: 1px solid var(--border);
   border-radius: 999px;
   padding: 8px 11px;
   font-weight: 700;
@@ -395,8 +446,8 @@ main {
 }
 
 .cheat-block {
-  background: #f6f9f8;
-  border: 1px solid rgba(23, 33, 31, 0.08);
+  background: var(--subtle);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 13px;
 }

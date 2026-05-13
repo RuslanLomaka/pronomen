@@ -1,4 +1,5 @@
 const STORAGE_KEY = "pronounForgeProgress";
+const THEME_KEY = "pronounForgeTheme";
 
 const levelDescriptions = {
   1: "Stufe 1: einfache Sätze mit Nominativ und Akkusativ.",
@@ -1173,6 +1174,7 @@ const state = {
   correctCountByLevel: {},
   weakSpots: {},
   levelUnlocked: 1,
+  theme: "light",
   speedTimer: null,
   speedTimeLeft: 60,
   speedCorrect: 0,
@@ -1186,6 +1188,7 @@ const els = {};
 function initApp() {
   cacheElements();
   loadProgress();
+  loadTheme();
   renderCheatSheet();
   renderModeButtons();
   renderLevelButtons();
@@ -1202,6 +1205,7 @@ function cacheElements() {
   els.modeButtons = document.getElementById("modeButtons");
   els.levelButtons = document.getElementById("levelButtons");
   els.levelDescription = document.getElementById("levelDescription");
+  els.themeToggle = document.getElementById("themeToggle");
   els.timerBox = document.getElementById("timerBox");
   els.progressText = document.getElementById("progressText");
   els.originalSentence = document.getElementById("originalSentence");
@@ -1229,6 +1233,7 @@ function cacheElements() {
 function bindEvents() {
   els.nextButton.addEventListener("click", nextTask);
   els.hintButton.addEventListener("click", showHint);
+  els.themeToggle.addEventListener("click", toggleTheme);
   els.startButton.addEventListener("click", () => startMode(state.currentMode));
   els.restartButton.addEventListener("click", restartGame);
   els.reviewMistakesButton.addEventListener("click", () => startMode("mistakes"));
@@ -1597,6 +1602,24 @@ function updateStats() {
   renderWeakSpots();
   renderModeButtonsState();
   renderLevelButtonsState();
+}
+
+function loadTheme() {
+  state.theme = localStorage.getItem(THEME_KEY) === "dark" ? "dark" : "light";
+  applyTheme();
+}
+
+function toggleTheme() {
+  state.theme = state.theme === "dark" ? "light" : "dark";
+  localStorage.setItem(THEME_KEY, state.theme);
+  applyTheme();
+}
+
+function applyTheme() {
+  const isDark = state.theme === "dark";
+  document.body.classList.toggle("dark-theme", isDark);
+  els.themeToggle.textContent = isDark ? "Hell" : "Dunkel";
+  els.themeToggle.setAttribute("aria-pressed", String(isDark));
 }
 
 function renderModeButtonsState() {
