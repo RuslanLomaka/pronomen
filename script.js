@@ -1,5 +1,6 @@
 const STORAGE_KEY = "pronounForgeProgress";
 const THEME_KEY = "pronounForgeTheme";
+const MISTAKE_MASTERY_TARGET = 3;
 
 const levelDescriptions = {
   1: "Einfache Sätze mit Nominativ und Akkusativ.",
@@ -1618,6 +1619,8 @@ const state = {
   answered: false,
   usedHint: false,
   mistakeIds: [],
+  mistakeMastery: {},
+  mistakeMastered: false,
   completedTasks: [],
   correctCountByLevel: {},
   weakSpots: {},
@@ -1766,6 +1769,7 @@ function renderTask() {
   state.lastTaskId = state.currentTask.id;
   state.answered = false;
   state.usedHint = false;
+  state.mistakeMastered = false;
 
   els.gameOverPanel.classList.add("hidden");
   if (state.currentTask.context) {
@@ -1867,11 +1871,13 @@ function checkAnswer(index) {
       state.score += 20;
     }
     unlockNextLevel();
+    state.mistakeMastered = updateMistakeMastery(state.currentTask, true);
   } else {
     state.hearts -= state.currentMode === "speed" ? 0 : 1;
     state.streak = 0;
     state.speedWrong += state.currentMode === "speed" ? 1 : 0;
     state.mistakeIds = unique([...state.mistakeIds, state.currentTask.id]);
+    updateMistakeMastery(state.currentTask, false);
     trackWeakSpots(state.currentTask);
   }
 
@@ -1893,9 +1899,11 @@ function showFeedback(isCorrect) {
   renderTags(state.currentTask);
   els.feedbackPanel.className = `feedback-panel ${isCorrect ? "correct" : "wrong"}`;
   els.feedbackPanel.classList.remove("hidden");
-  els.feedbackTitle.textContent = isCorrect ? "Richtig" : "Fast";
+  els.feedbackTitle.textContent = state.mistakeMastered ? "Gemeistert" : isCorrect ? "Richtig" : "Fast";
   els.correctAnswerText.textContent = `Richtige Antwort: ${state.currentTask.correct}`;
-  els.explanationText.textContent = speedCorrect ? "Gut. Weiter so." : buildGermanExplanation(state.currentTask);
+  els.explanationText.textContent = state.mistakeMastered
+    ? `Dieser Fehler ist erledigt. ${buildGermanExplanation(state.currentTask)}`
+    : speedCorrect ? "Gut. Weiter so." : buildGermanExplanation(state.currentTask);
   els.caseLogicList.innerHTML = "";
 
   if (!speedCorrect) {
@@ -2049,13 +2057,40 @@ function restartGame() {
 
 function showEmptyMode() {
   state.currentTask = null;
-  els.originalSentence.textContent = "Hier gibt es noch keine Aufgaben.";
+  els.originalSentence.textContent = state.currentMode === "mistakes"
+    ? "Keine Fehler mehr."
+    : "Hier gibt es noch keine Aufgaben.";
   els.nanoContext.textContent = "";
   els.nanoContext.classList.add("hidden");
   els.tagList.innerHTML = "";
   els.answerButtons.innerHTML = "";
   els.hintButton.classList.add("hidden");
   hideFeedback();
+}
+
+function updateMistakeMastery(task, isCorrect) {
+  if (state.currentMode !== "mistakes") {
+    if (!isCorrect) {
+      state.mistakeMastery[task.id] = 0;
+    }
+    return false;
+  }
+
+  if (!isCorrect) {
+    state.mistakeMastery[task.id] = 0;
+    return false;
+  }
+
+  const nextCount = (state.mistakeMastery[task.id] || 0) + 1;
+  if (nextCount >= MISTAKE_MASTERY_TARGET) {
+    state.mistakeIds = state.mistakeIds.filter((id) => id !== task.id);
+    delete state.mistakeMastery[task.id];
+    reduceWeakSpots(task);
+    return true;
+  }
+
+  state.mistakeMastery[task.id] = nextCount;
+  return false;
 }
 
 function unlockNextLevel() {
@@ -2065,7 +2100,7 @@ function unlockNextLevel() {
   }
 }
 
-function trackWeakSpots(task) {
+function getWeakSpotTags(task) {
   const tags = new Set();
   task.modeTags.forEach((tag) => {
     if (["nominativ", "akkusativ", "dativ", "formal", "plural", "preposition", "twoObjects"].includes(tag)) {
@@ -2078,8 +2113,22 @@ function trackWeakSpots(task) {
       tags.add(key);
     }
   });
-  tags.forEach((tag) => {
+  return tags;
+}
+
+function trackWeakSpots(task) {
+  getWeakSpotTags(task).forEach((tag) => {
     state.weakSpots[tag] = (state.weakSpots[tag] || 0) + 1;
+  });
+}
+
+function reduceWeakSpots(task) {
+  getWeakSpotTags(task).forEach((tag) => {
+    if (!state.weakSpots[tag]) return;
+    state.weakSpots[tag] -= 1;
+    if (state.weakSpots[tag] <= 0) {
+      delete state.weakSpots[tag];
+    }
   });
 }
 
@@ -2177,6 +2226,7 @@ function saveProgress() {
     totalScore: state.score,
     completedTasks: state.completedTasks,
     mistakeIds: state.mistakeIds,
+    mistakeMastery: state.mistakeMastery,
     bestStreak: state.bestStreak,
     bestSpeedModeScore: state.bestSpeedModeScore,
     levelUnlocked: state.levelUnlocked,
@@ -2194,6 +2244,7 @@ function loadProgress() {
     state.score = data.totalScore || 0;
     state.completedTasks = data.completedTasks || [];
     state.mistakeIds = data.mistakeIds || [];
+    state.mistakeMastery = data.mistakeMastery || {};
     state.bestStreak = data.bestStreak || 0;
     state.bestSpeedModeScore = data.bestSpeedModeScore || 0;
     state.levelUnlocked = data.levelUnlocked || 1;
@@ -2214,6 +2265,8 @@ function resetProgress() {
   state.streak = 0;
   state.hearts = 3;
   state.mistakeIds = [];
+  state.mistakeMastery = {};
+  state.mistakeMastered = false;
   state.completedTasks = [];
   state.correctCountByLevel = {};
   state.weakSpots = {};
