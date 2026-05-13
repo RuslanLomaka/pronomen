@@ -1,5 +1,16 @@
 const STORAGE_KEY = "pronounForgeProgress";
 
+const levelDescriptions = {
+  1: "Stufe 1: einfache Sätze mit Nominativ und Akkusativ.",
+  2: "Stufe 2: Dativ-Verben wie helfen, danken, antworten, gehören und folgen.",
+  3: "Stufe 3: persönliche Pronomen: ich, du, wir, ihr und formelles Sie.",
+  4: "Stufe 4: zwei Objekte im Satz: Dativ-Person und Akkusativ-Sache.",
+  5: "Stufe 5: Präpositionen mit Dativ oder Akkusativ.",
+  6: "Stufe 6: Orte und Wechselpräpositionen: wo = Dativ, wohin = Akkusativ.",
+  7: "Stufe 7: gemischte Wiederholung aus allen bisherigen Stufen.",
+  8: "Stufe 8: Boss-Stufe mit längeren Sätzen, Fallen und zwei Pronomen."
+};
+
 const tasks = [
   {
     id: "l1-001",
@@ -1190,6 +1201,7 @@ function cacheElements() {
   els.heartsLabel = document.getElementById("heartsLabel");
   els.modeButtons = document.getElementById("modeButtons");
   els.levelButtons = document.getElementById("levelButtons");
+  els.levelDescription = document.getElementById("levelDescription");
   els.timerBox = document.getElementById("timerBox");
   els.progressText = document.getElementById("progressText");
   els.originalSentence = document.getElementById("originalSentence");
@@ -1581,6 +1593,7 @@ function updateStats() {
   els.progressText.textContent = state.currentMode === "speed"
     ? `Zeit: ${state.speedCorrect} richtig, ${state.speedWrong} falsch`
     : `Stufe ${state.currentLevel}: ${Math.min(count, 8)} / 8`;
+  els.levelDescription.textContent = levelDescriptions[state.currentLevel];
   renderWeakSpots();
   renderModeButtonsState();
   renderLevelButtonsState();
