@@ -1344,7 +1344,7 @@ function renderAnswerButtons(task) {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "answer-button";
-    button.textContent = option;
+    button.innerHTML = `<span class="answer-letter">${String.fromCharCode(65 + index)}</span><span>${option}</span>`;
     button.addEventListener("click", () => checkAnswer(index));
     els.answerButtons.appendChild(button);
   });

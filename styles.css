@@ -328,13 +328,27 @@ main {
 }
 
 .answer-button {
-  text-align: left;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
   color: var(--text);
   background: var(--answer);
   border: 2px solid var(--border);
   padding: 14px 18px;
   font-size: clamp(1.05rem, 2vw, 1.35rem);
   font-weight: 700;
+}
+
+.answer-button::after {
+  content: "";
+}
+
+.answer-letter {
+  color: var(--muted);
+  opacity: 0.58;
+  font-weight: 900;
 }
 
 .answer-button.correct {
