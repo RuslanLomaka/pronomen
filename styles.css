@@ -178,8 +178,8 @@ main {
 }
 
 .level-button.locked {
-  color: #9aa5a1;
-  background: #f2f4f3;
+  color: var(--text);
+  background: #eef4f2;
 }
 
 .level-button.active,
