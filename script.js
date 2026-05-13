@@ -17,7 +17,6 @@ const modeHelp = {
   speed: "60 Sekunden Zeit. Beantworte so viele Aufgaben wie möglich.",
   minimalPair: "Sehr ähnliche Sätze. Du siehst, wie der Fall das Pronomen ändert.",
   context: "Übt Pronomen, die eine Situation brauchen: uns, Sie/Ihnen und sie/ihnen.",
-  nano: "Sehr kurzer Sprech-Kontext. Übt ich/mich/mir, du/dich/dir, wir/uns und ihr/euch.",
   boss: "Schwere Aufgaben mit Fallen, zwei Pronomen und gemischten Fällen.",
   mistakes: "Übt nur Aufgaben, die du vorher falsch beantwortet hast."
 };
@@ -1309,7 +1308,7 @@ const tasks = [
   {
     id: "nano-001",
     level: 3,
-    modeTags: ["context", "nano", "akkusativ", "informal"],
+    modeTags: ["context", "akkusativ", "informal"],
     original: "Ich stehe vor dir. Du schaust.",
     correct: "Du siehst mich.",
     options: ["Du siehst mich.", "Du siehst mir.", "Ich sehe dich.", "Du siehst ich."],
@@ -1323,7 +1322,7 @@ const tasks = [
   {
     id: "nano-002",
     level: 3,
-    modeTags: ["context", "nano", "dativ", "informal"],
+    modeTags: ["context", "dativ", "informal"],
     original: "Ich brauche Hilfe. Du hilfst.",
     correct: "Du hilfst mir.",
     options: ["Du hilfst mir.", "Du hilfst mich.", "Ich helfe dir.", "Du hilfst ich."],
@@ -1337,7 +1336,7 @@ const tasks = [
   {
     id: "nano-003",
     level: 3,
-    modeTags: ["context", "nano", "akkusativ", "informal"],
+    modeTags: ["context", "akkusativ", "informal"],
     original: "Du stehst vor mir. Ich schaue.",
     correct: "Ich sehe dich.",
     options: ["Ich sehe dich.", "Ich sehe dir.", "Du siehst mich.", "Ich sehe du."],
@@ -1351,7 +1350,7 @@ const tasks = [
   {
     id: "nano-004",
     level: 3,
-    modeTags: ["context", "nano", "dativ", "informal"],
+    modeTags: ["context", "dativ", "informal"],
     original: "Du machst die Aufgabe. Ich helfe.",
     correct: "Ich helfe dir.",
     options: ["Ich helfe dir.", "Ich helfe dich.", "Du hilfst mir.", "Ich helfe du."],
@@ -1365,7 +1364,7 @@ const tasks = [
   {
     id: "nano-005",
     level: 3,
-    modeTags: ["context", "nano", "akkusativ", "uns"],
+    modeTags: ["context", "akkusativ", "uns"],
     original: "Anna und ich stehen vor dem Lehrer. Der Lehrer schaut.",
     correct: "Er sieht uns.",
     options: ["Er sieht uns.", "Er sieht wir.", "Er sieht euch.", "Er sieht ihnen."],
@@ -1379,7 +1378,7 @@ const tasks = [
   {
     id: "nano-006",
     level: 3,
-    modeTags: ["context", "nano", "dativ", "uns"],
+    modeTags: ["context", "dativ", "uns"],
     original: "Anna und ich brauchen Hilfe. Die Lehrerin hilft.",
     correct: "Sie hilft uns.",
     options: ["Sie hilft uns.", "Sie hilft wir.", "Sie hilft euch.", "Sie hilft ihnen."],
@@ -1393,7 +1392,7 @@ const tasks = [
   {
     id: "nano-007",
     level: 3,
-    modeTags: ["context", "nano", "akkusativ", "informal", "plural"],
+    modeTags: ["context", "akkusativ", "informal", "plural"],
     original: "Du und Max seid vor mir. Ich schaue.",
     correct: "Ich sehe euch.",
     options: ["Ich sehe euch.", "Ich sehe ihr.", "Du siehst uns.", "Ich sehe Sie."],
@@ -1407,8 +1406,8 @@ const tasks = [
   {
     id: "nano-008",
     level: 3,
-    modeTags: ["context", "nano", "dativ", "informal", "plural"],
-    original: "Du und Max braucht Hilfe. Ich helfe.",
+    modeTags: ["context", "dativ", "informal", "plural"],
+    original: "Du und Max habt ein Problem. Ich helfe.",
     correct: "Ich helfe euch.",
     options: ["Ich helfe euch.", "Ich helfe ihr.", "Ihr helft mir.", "Ich helfe Sie."],
     explanation: "Kontext: du und Max -> ihr/euch. helfen + Dativ -> euch.",
@@ -1417,6 +1416,176 @@ const tasks = [
       { noun: "dir und Max", pronoun: "euch", case: "Dativ", gender: "2. Person", number: "plural" }
     ],
     hint: "du und Max -> ihr; Akkusativ/Dativ = euch"
+  },
+  {
+    id: "nano-009",
+    level: 3,
+    modeTags: ["context", "akkusativ", "informal"],
+    original: "Ich habe Geburtstag. Du kommst.",
+    correct: "Du besuchst mich.",
+    options: ["Du besuchst mich.", "Du besuchst mir.", "Ich besuche dich.", "Du besuchst ich."],
+    explanation: "Kontext: ich habe Geburtstag. besuchen + Akkusativ -> mich.",
+    replacements: [
+      { noun: "du", pronoun: "du", case: "Nominativ", gender: "2. Person", number: "singular" },
+      { noun: "ich", pronoun: "mich", case: "Akkusativ", gender: "1. Person", number: "singular" }
+    ],
+    hint: "besuchen + Akkusativ: ich -> mich"
+  },
+  {
+    id: "nano-010",
+    level: 3,
+    modeTags: ["context", "akkusativ", "informal"],
+    original: "Du hast Geburtstag. Ich komme.",
+    correct: "Ich besuche dich.",
+    options: ["Ich besuche dich.", "Ich besuche dir.", "Du besuchst mich.", "Ich besuche du."],
+    explanation: "Kontext: du hast Geburtstag. besuchen + Akkusativ -> dich.",
+    replacements: [
+      { noun: "ich", pronoun: "ich", case: "Nominativ", gender: "1. Person", number: "singular" },
+      { noun: "du", pronoun: "dich", case: "Akkusativ", gender: "2. Person", number: "singular" }
+    ],
+    hint: "besuchen + Akkusativ: du -> dich"
+  },
+  {
+    id: "nano-011",
+    level: 3,
+    modeTags: ["context", "dativ", "informal"],
+    original: "Ich frage. Du antwortest.",
+    correct: "Du antwortest mir.",
+    options: ["Du antwortest mir.", "Du antwortest mich.", "Ich antworte dir.", "Du antwortest ich."],
+    explanation: "Kontext: ich frage, du antwortest mir. antworten + Dativ -> mir.",
+    replacements: [
+      { noun: "du", pronoun: "du", case: "Nominativ", gender: "2. Person", number: "singular" },
+      { noun: "ich", pronoun: "mir", case: "Dativ", gender: "1. Person", number: "singular" }
+    ],
+    hint: "antworten + Dativ: ich -> mir"
+  },
+  {
+    id: "nano-012",
+    level: 3,
+    modeTags: ["context", "dativ", "informal"],
+    original: "Du fragst. Ich antworte.",
+    correct: "Ich antworte dir.",
+    options: ["Ich antworte dir.", "Ich antworte dich.", "Du antwortest mir.", "Ich antworte du."],
+    explanation: "Kontext: du fragst, ich antworte dir. antworten + Dativ -> dir.",
+    replacements: [
+      { noun: "ich", pronoun: "ich", case: "Nominativ", gender: "1. Person", number: "singular" },
+      { noun: "du", pronoun: "dir", case: "Dativ", gender: "2. Person", number: "singular" }
+    ],
+    hint: "antworten + Dativ: du -> dir"
+  },
+  {
+    id: "nano-013",
+    level: 3,
+    modeTags: ["context", "akkusativ", "uns"],
+    original: "Anna und ich warten. Du kommst.",
+    correct: "Du besuchst uns.",
+    options: ["Du besuchst uns.", "Du besuchst wir.", "Du besuchst euch.", "Du besuchst ihnen."],
+    explanation: "Kontext: Anna und ich -> wir/uns. besuchen + Akkusativ -> uns.",
+    replacements: [
+      { noun: "du", pronoun: "du", case: "Nominativ", gender: "2. Person", number: "singular" },
+      { noun: "Anna und ich", pronoun: "uns", case: "Akkusativ", gender: "1. Person", number: "plural" }
+    ],
+    hint: "Anna und ich -> wir; Akkusativ/Dativ = uns"
+  },
+  {
+    id: "nano-014",
+    level: 3,
+    modeTags: ["context", "dativ", "uns"],
+    original: "Anna und ich fragen. Du antwortest.",
+    correct: "Du antwortest uns.",
+    options: ["Du antwortest uns.", "Du antwortest wir.", "Du antwortest euch.", "Du antwortest ihnen."],
+    explanation: "Kontext: Anna und ich -> wir/uns. antworten + Dativ -> uns.",
+    replacements: [
+      { noun: "du", pronoun: "du", case: "Nominativ", gender: "2. Person", number: "singular" },
+      { noun: "Anna und ich", pronoun: "uns", case: "Dativ", gender: "1. Person", number: "plural" }
+    ],
+    hint: "antworten + Dativ: wir -> uns"
+  },
+  {
+    id: "nano-015",
+    level: 3,
+    modeTags: ["context", "akkusativ", "informal", "plural"],
+    original: "Du und Max seid da. Ich komme.",
+    correct: "Ich besuche euch.",
+    options: ["Ich besuche euch.", "Ich besuche ihr.", "Ihr besucht mich.", "Ich besuche Ihnen."],
+    explanation: "Kontext: du und Max -> ihr/euch. besuchen + Akkusativ -> euch.",
+    replacements: [
+      { noun: "ich", pronoun: "ich", case: "Nominativ", gender: "1. Person", number: "singular" },
+      { noun: "du und Max", pronoun: "euch", case: "Akkusativ", gender: "2. Person", number: "plural" }
+    ],
+    hint: "du und Max -> ihr; Akkusativ/Dativ = euch"
+  },
+  {
+    id: "nano-016",
+    level: 3,
+    modeTags: ["context", "dativ", "informal", "plural"],
+    original: "Du und Max habt eine Frage. Ich antworte.",
+    correct: "Ich antworte euch.",
+    options: ["Ich antworte euch.", "Ich antworte ihr.", "Ihr antwortet mir.", "Ich antworte Ihnen."],
+    explanation: "Kontext: du und Max -> ihr/euch. antworten + Dativ -> euch.",
+    replacements: [
+      { noun: "ich", pronoun: "ich", case: "Nominativ", gender: "1. Person", number: "singular" },
+      { noun: "du und Max", pronoun: "euch", case: "Dativ", gender: "2. Person", number: "plural" }
+    ],
+    hint: "antworten + Dativ: ihr -> euch"
+  },
+  {
+    id: "nano-017",
+    level: 3,
+    modeTags: ["context", "akkusativ", "formal", "siezen"],
+    original: "Frau Keller, Sie warten. Der Arzt kommt.",
+    correct: "Er begrüßt Sie.",
+    options: ["Er begrüßt Sie.", "Er begrüßt Ihnen.", "Er begrüßt dich.", "Er begrüßt sie."],
+    explanation: "Kontext: Frau Keller wird formell angesprochen. begrüßen + Akkusativ -> Sie.",
+    replacements: [
+      { noun: "Der Arzt", pronoun: "er", case: "Nominativ", gender: "maskulin", number: "singular" },
+      { noun: "Frau Keller", pronoun: "Sie", case: "Akkusativ", gender: "formell", number: "singular" }
+    ],
+    hint: "formell + Akkusativ = Sie"
+  },
+  {
+    id: "nano-018",
+    level: 3,
+    modeTags: ["context", "dativ", "formal", "siezen"],
+    original: "Herr Bauer, Sie brauchen Hilfe. Die Ärztin kommt.",
+    correct: "Sie hilft Ihnen.",
+    options: ["Sie hilft Ihnen.", "Sie hilft Sie.", "Sie hilft dir.", "Sie hilft ihnen."],
+    explanation: "Kontext: Herr Bauer wird formell angesprochen. helfen + Dativ -> Ihnen.",
+    replacements: [
+      { noun: "Die Ärztin", pronoun: "sie", case: "Nominativ", gender: "feminin", number: "singular" },
+      { noun: "Herr Bauer", pronoun: "Ihnen", case: "Dativ", gender: "formell", number: "singular" }
+    ],
+    hint: "formell + Dativ = Ihnen"
+  },
+  {
+    id: "nano-019",
+    level: 4,
+    modeTags: ["context", "dativ", "akkusativ", "informal", "twoObjects"],
+    original: "Ich habe das Buch. Du brauchst das Buch.",
+    correct: "Ich gebe es dir.",
+    options: ["Ich gebe es dir.", "Ich gebe es dich.", "Du gibst es mir.", "Ich gebe ihn dir."],
+    explanation: "Kontext: das Buch -> es, du bekommst es. geben: Sache im Akkusativ, Person im Dativ -> dir.",
+    replacements: [
+      { noun: "ich", pronoun: "ich", case: "Nominativ", gender: "1. Person", number: "singular" },
+      { noun: "das Buch", pronoun: "es", case: "Akkusativ", gender: "neutral", number: "singular" },
+      { noun: "du", pronoun: "dir", case: "Dativ", gender: "2. Person", number: "singular" }
+    ],
+    hint: "geben: Akkusativ-Sache + Dativ-Person"
+  },
+  {
+    id: "nano-020",
+    level: 4,
+    modeTags: ["context", "dativ", "akkusativ", "informal", "twoObjects"],
+    original: "Du hast das Handy. Ich brauche das Handy.",
+    correct: "Du gibst es mir.",
+    options: ["Du gibst es mir.", "Du gibst es mich.", "Ich gebe es dir.", "Du gibst ihn mir."],
+    explanation: "Kontext: das Handy -> es, ich bekomme es. geben: Sache im Akkusativ, Person im Dativ -> mir.",
+    replacements: [
+      { noun: "du", pronoun: "du", case: "Nominativ", gender: "2. Person", number: "singular" },
+      { noun: "das Handy", pronoun: "es", case: "Akkusativ", gender: "neutral", number: "singular" },
+      { noun: "ich", pronoun: "mir", case: "Dativ", gender: "1. Person", number: "singular" }
+    ],
+    hint: "geben: Akkusativ-Sache + Dativ-Person"
   }
 ];
 
@@ -1527,7 +1696,6 @@ function renderModeButtons() {
     { id: "speed", label: "Zeit" },
     { id: "minimalPair", label: "Paare" },
     { id: "context", label: "Kontext" },
-    { id: "nano", label: "Nano" },
     { id: "boss", label: "Boss" },
     { id: "mistakes", label: "Fehler" }
   ];
@@ -1630,7 +1798,6 @@ function renderTags(task) {
       boss: "Boss",
       location: "Wechselpräposition",
       context: "Kontext",
-      nano: "Nano-Kontext",
       siezen: "Siezen",
       dass: "dass-Satz",
       uns: "uns"
@@ -1775,9 +1942,6 @@ function getTasksForCurrentMode() {
   }
   if (state.currentMode === "context") {
     return tasks.filter((task) => task.modeTags.includes("context"));
-  }
-  if (state.currentMode === "nano") {
-    return tasks.filter((task) => task.modeTags.includes("nano"));
   }
   if (state.currentMode === "boss") {
     return tasks.filter((task) => task.level === 8 || task.modeTags.includes("boss"));
