@@ -1304,6 +1304,82 @@ const tasks = [
       { noun: "Anna", pronoun: "ihr", case: "Dativ", gender: "feminin", number: "singular" }
     ],
     hint: "helfen + Dativ; im dass-Satz steht hilft am Ende"
+  },
+  {
+    id: "nano-001",
+    level: 3,
+    modeTags: ["context", "nano", "akkusativ"],
+    context: "Anna mag Max.",
+    original: "Anna sieht Max.",
+    correct: "Sie sieht ihn.",
+    options: ["Sie sieht ihn.", "Sie sieht ihm.", "Er sieht sie.", "Sie sieht er."],
+    explanation: "Kontext: Anna -> sie, Max -> ihn. sehen + Akkusativ.",
+    replacements: [
+      { noun: "Anna", pronoun: "sie", case: "Nominativ", gender: "feminin", number: "singular" },
+      { noun: "Max", pronoun: "ihn", case: "Akkusativ", gender: "maskulin", number: "singular" }
+    ],
+    hint: "sehen + Akkusativ"
+  },
+  {
+    id: "nano-002",
+    level: 3,
+    modeTags: ["context", "nano", "dativ"],
+    context: "Anna kennt Max.",
+    original: "Max hilft Anna.",
+    correct: "Er hilft ihr.",
+    options: ["Er hilft ihr.", "Er hilft sie.", "Sie hilft ihm.", "Er hilft ihn."],
+    explanation: "Kontext: Max -> er, Anna -> ihr. helfen + Dativ.",
+    replacements: [
+      { noun: "Max", pronoun: "er", case: "Nominativ", gender: "maskulin", number: "singular" },
+      { noun: "Anna", pronoun: "ihr", case: "Dativ", gender: "feminin", number: "singular" }
+    ],
+    hint: "helfen + Dativ"
+  },
+  {
+    id: "nano-003",
+    level: 4,
+    modeTags: ["context", "nano", "twoObjects", "dativ", "akkusativ"],
+    context: "Der Vater hat einen Ball. Das Kind wartet.",
+    original: "Der Vater gibt dem Kind den Ball.",
+    correct: "Er gibt ihn ihm.",
+    options: ["Er gibt ihn ihm.", "Er gibt ihm ihn.", "Er gibt ihn es.", "Sie gibt ihn ihm."],
+    explanation: "Kontext: Der Vater -> er, den Ball -> ihn, dem Kind -> ihm.",
+    replacements: [
+      { noun: "Der Vater", pronoun: "er", case: "Nominativ", gender: "maskulin", number: "singular" },
+      { noun: "den Ball", pronoun: "ihn", case: "Akkusativ", gender: "maskulin", number: "singular" },
+      { noun: "dem Kind", pronoun: "ihm", case: "Dativ", gender: "neutral", number: "singular" }
+    ],
+    hint: "Akkusativ-Pronomen vor Dativ-Pronomen"
+  },
+  {
+    id: "nano-004",
+    level: 3,
+    modeTags: ["context", "nano", "siezen", "formal", "dativ"],
+    context: "Herr Bauer ist hier. Formell.",
+    original: "Der Arzt hilft Herrn Bauer.",
+    correct: "Er hilft Ihnen.",
+    options: ["Er hilft Ihnen.", "Er hilft ihnen.", "Er hilft Sie.", "Er hilft ihn."],
+    explanation: "Kontext: formell. helfen + Dativ -> Ihnen.",
+    replacements: [
+      { noun: "Der Arzt", pronoun: "er", case: "Nominativ", gender: "maskulin", number: "singular" },
+      { noun: "Herrn Bauer", pronoun: "Ihnen", case: "Dativ", gender: "formell", number: "singular" }
+    ],
+    hint: "Formell + Dativ = Ihnen"
+  },
+  {
+    id: "nano-005",
+    level: 3,
+    modeTags: ["context", "nano", "dass", "akkusativ"],
+    context: "Anna liebt Max.",
+    original: "Anna sagt, dass Anna Max liebt.",
+    correct: "Sie sagt, dass sie ihn liebt.",
+    options: ["Sie sagt, dass sie ihn liebt.", "Sie sagt, dass sie ihm liebt.", "Sie sagt, dass er sie liebt.", "Sie sagt, dass ihr ihn liebt."],
+    explanation: "Kontext: Anna -> sie, Max -> ihn. lieben + Akkusativ. Im dass-Satz steht liebt am Ende.",
+    replacements: [
+      { noun: "Anna", pronoun: "sie", case: "Nominativ", gender: "feminin", number: "singular" },
+      { noun: "Max", pronoun: "ihn", case: "Akkusativ", gender: "maskulin", number: "singular" }
+    ],
+    hint: "dass: Verb am Ende; lieben + Akkusativ"
   }
 ];
 
@@ -1359,6 +1435,7 @@ function cacheElements() {
   els.controlsDisclosure = document.getElementById("controlsDisclosure");
   els.themeToggle = document.getElementById("themeToggle");
   els.timerBox = document.getElementById("timerBox");
+  els.nanoContext = document.getElementById("nanoContext");
   els.originalSentence = document.getElementById("originalSentence");
   els.tagList = document.getElementById("tagList");
   els.hintBox = document.getElementById("hintBox");
@@ -1467,6 +1544,13 @@ function renderTask() {
   state.usedHint = false;
 
   els.gameOverPanel.classList.add("hidden");
+  if (state.currentTask.context) {
+    els.nanoContext.textContent = `Kontext: ${state.currentTask.context}`;
+    els.nanoContext.classList.remove("hidden");
+  } else {
+    els.nanoContext.textContent = "";
+    els.nanoContext.classList.add("hidden");
+  }
   els.originalSentence.textContent = state.currentTask.original;
   els.hintBox.textContent = "";
   els.hintBox.classList.add("hidden");
@@ -1508,6 +1592,7 @@ function renderTags(task) {
       boss: "Boss",
       location: "Wechselpräposition",
       context: "Kontext",
+      nano: "Nano-Kontext",
       siezen: "Siezen",
       dass: "dass-Satz",
       uns: "uns"
@@ -1738,6 +1823,8 @@ function restartGame() {
 function showEmptyMode() {
   state.currentTask = null;
   els.originalSentence.textContent = "Hier gibt es noch keine Aufgaben.";
+  els.nanoContext.textContent = "";
+  els.nanoContext.classList.add("hidden");
   els.tagList.innerHTML = "";
   els.answerButtons.innerHTML = "";
   els.hintButton.classList.add("hidden");
