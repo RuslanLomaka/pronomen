@@ -317,7 +317,7 @@ main {
 }
 
 .hint-button {
-  margin-top: 8px;
+  margin-top: 14px;
 }
 
 .answers-grid {
@@ -604,6 +604,10 @@ main {
   .answers-grid {
     gap: 8px;
     margin-top: 8px;
+  }
+
+  .hint-button {
+    margin-top: 12px;
   }
 
   .tag-list {
