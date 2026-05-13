@@ -6,7 +6,6 @@ const tasks = [
     level: 1,
     modeTags: ["classic", "akkusativ", "minimalPair"],
     original: "Der Mann sieht den Hund.",
-    translation: "The man sees the dog.",
     correct: "Er sieht ihn.",
     options: ["Er sieht ihn.", "Ihn sieht er.", "Er sieht ihm.", "Sie sieht ihn."],
     explanation: "Der Mann is masculine nominative -> er. Den Hund is masculine accusative -> ihn. Sehen takes accusative.",
@@ -21,7 +20,6 @@ const tasks = [
     level: 1,
     modeTags: ["classic", "akkusativ"],
     original: "Die Frau sieht die Katze.",
-    translation: "The woman sees the cat.",
     correct: "Sie sieht sie.",
     options: ["Sie sieht sie.", "Sie sieht ihr.", "Er sieht sie.", "Sie sieht ihn."],
     explanation: "Die Frau is feminine nominative -> sie. Die Katze is feminine accusative -> sie.",
@@ -36,7 +34,6 @@ const tasks = [
     level: 1,
     modeTags: ["classic", "akkusativ"],
     original: "Das Kind sieht das Auto.",
-    translation: "The child sees the car.",
     correct: "Es sieht es.",
     options: ["Es sieht es.", "Er sieht es.", "Es sieht ihn.", "Ihm sieht es."],
     explanation: "Das Kind is neuter nominative -> es. Das Auto is neuter accusative -> es.",
@@ -51,7 +48,6 @@ const tasks = [
     level: 1,
     modeTags: ["classic", "akkusativ"],
     original: "Die Kinder sehen den Lehrer.",
-    translation: "The children see the teacher.",
     correct: "Sie sehen ihn.",
     options: ["Sie sehen ihn.", "Sie sehen ihm.", "Er sehen ihn.", "Sie sehen sie."],
     explanation: "Die Kinder is plural nominative -> sie. Den Lehrer is masculine accusative -> ihn.",
@@ -66,7 +62,6 @@ const tasks = [
     level: 1,
     modeTags: ["classic", "akkusativ"],
     original: "Der Lehrer besucht die Eltern.",
-    translation: "The teacher visits the parents.",
     correct: "Er besucht sie.",
     options: ["Er besucht sie.", "Er besucht ihnen.", "Ihn besucht sie.", "Sie besucht ihn."],
     explanation: "Der Lehrer is masculine nominative -> er. Die Eltern is plural accusative -> sie.",
@@ -81,7 +76,6 @@ const tasks = [
     level: 1,
     modeTags: ["classic", "akkusativ"],
     original: "Die Lehrerin findet das Handy.",
-    translation: "The teacher finds the phone.",
     correct: "Sie findet es.",
     options: ["Sie findet es.", "Sie findet ihn.", "Ihr findet es.", "Er findet sie."],
     explanation: "Die Lehrerin is feminine nominative -> sie. Das Handy is neuter accusative -> es.",
@@ -96,7 +90,6 @@ const tasks = [
     level: 1,
     modeTags: ["classic", "akkusativ"],
     original: "Der Schüler kauft die Tasche.",
-    translation: "The student buys the bag.",
     correct: "Er kauft sie.",
     options: ["Er kauft sie.", "Er kauft ihr.", "Ihn kauft sie.", "Sie kauft ihn."],
     explanation: "Der Schüler is masculine nominative -> er. Die Tasche is feminine accusative -> sie.",
@@ -111,7 +104,6 @@ const tasks = [
     level: 1,
     modeTags: ["classic", "akkusativ"],
     original: "Die Schülerin liest das Buch.",
-    translation: "The schoolgirl reads the book.",
     correct: "Sie liest es.",
     options: ["Sie liest es.", "Sie liest ihn.", "Ihr liest es.", "Er liest sie."],
     explanation: "Die Schülerin is feminine nominative -> sie. Das Buch is neuter accusative -> es.",
@@ -126,7 +118,6 @@ const tasks = [
     level: 1,
     modeTags: ["classic", "akkusativ"],
     original: "Das Mädchen besucht den Arzt.",
-    translation: "The girl visits the doctor.",
     correct: "Es besucht ihn.",
     options: ["Es besucht ihn.", "Sie besucht ihn.", "Es besucht ihm.", "Er besucht sie."],
     explanation: "Das Mädchen is grammatically neuter -> es. Den Arzt is masculine accusative -> ihn.",
@@ -141,7 +132,6 @@ const tasks = [
     level: 1,
     modeTags: ["classic", "akkusativ"],
     original: "Die Mutter ruft den Vater.",
-    translation: "The mother calls the father.",
     correct: "Sie ruft ihn.",
     options: ["Sie ruft ihn.", "Sie ruft ihm.", "Er ruft sie.", "Ihr ruft ihn."],
     explanation: "Die Mutter is feminine nominative -> sie. Den Vater is masculine accusative -> ihn.",
@@ -156,7 +146,6 @@ const tasks = [
     level: 1,
     modeTags: ["classic", "akkusativ"],
     original: "Der Hund sucht die Kinder.",
-    translation: "The dog looks for the children.",
     correct: "Er sucht sie.",
     options: ["Er sucht sie.", "Er sucht ihnen.", "Ihn sucht sie.", "Es sucht ihn."],
     explanation: "Der Hund is masculine nominative -> er. Die Kinder is plural accusative -> sie.",
@@ -171,7 +160,6 @@ const tasks = [
     level: 1,
     modeTags: ["classic", "akkusativ"],
     original: "Die Eltern kaufen das Auto.",
-    translation: "The parents buy the car.",
     correct: "Sie kaufen es.",
     options: ["Sie kaufen es.", "Sie kaufen ihn.", "Ihnen kaufen es.", "Er kauft sie."],
     explanation: "Die Eltern is plural nominative -> sie. Das Auto is neuter accusative -> es.",
@@ -186,7 +174,6 @@ const tasks = [
     level: 2,
     modeTags: ["classic", "dativ", "minimalPair"],
     original: "Der Lehrer hilft dem Schüler.",
-    translation: "The teacher helps the student.",
     correct: "Er hilft ihm.",
     options: ["Er hilft ihm.", "Er hilft ihn.", "Ihm hilft er.", "Sie hilft ihm."],
     explanation: "Der Lehrer is masculine nominative -> er. Helfen takes dative, so dem Schüler -> ihm.",
@@ -201,7 +188,6 @@ const tasks = [
     level: 2,
     modeTags: ["classic", "dativ"],
     original: "Die Lehrerin hilft der Schülerin.",
-    translation: "The teacher helps the schoolgirl.",
     correct: "Sie hilft ihr.",
     options: ["Sie hilft ihr.", "Sie hilft sie.", "Er hilft ihr.", "Sie hilft ihm."],
     explanation: "Die Lehrerin is feminine nominative -> sie. Helfen takes dative, so der Schülerin -> ihr.",
@@ -216,7 +202,6 @@ const tasks = [
     level: 2,
     modeTags: ["classic", "dativ"],
     original: "Das Buch gehört dem Mann.",
-    translation: "The book belongs to the man.",
     correct: "Es gehört ihm.",
     options: ["Es gehört ihm.", "Es gehört ihn.", "Er gehört ihm.", "Es gehört ihr."],
     explanation: "Das Buch is neuter nominative -> es. Gehören takes dative, so dem Mann -> ihm.",
@@ -231,7 +216,6 @@ const tasks = [
     level: 2,
     modeTags: ["classic", "dativ"],
     original: "Die Kinder danken der Lehrerin.",
-    translation: "The children thank the teacher.",
     correct: "Sie danken ihr.",
     options: ["Sie danken ihr.", "Sie danken sie.", "Sie danken ihm.", "Ihr danken sie."],
     explanation: "Die Kinder is plural nominative -> sie. Danken takes dative, so der Lehrerin -> ihr.",
@@ -246,7 +230,6 @@ const tasks = [
     level: 2,
     modeTags: ["classic", "dativ"],
     original: "Die Mutter antwortet der Tochter.",
-    translation: "The mother answers the daughter.",
     correct: "Sie antwortet ihr.",
     options: ["Sie antwortet ihr.", "Sie antwortet sie.", "Er antwortet ihr.", "Sie antwortet ihm."],
     explanation: "Die Mutter is feminine nominative -> sie. Antworten takes dative, so der Tochter -> ihr.",
@@ -261,7 +244,6 @@ const tasks = [
     level: 2,
     modeTags: ["classic", "dativ"],
     original: "Der Vater folgt dem Kind.",
-    translation: "The father follows the child.",
     correct: "Er folgt ihm.",
     options: ["Er folgt ihm.", "Er folgt es.", "Ihn folgt ihm.", "Sie folgt ihm."],
     explanation: "Der Vater is masculine nominative -> er. Folgen takes dative, so dem Kind -> ihm.",
@@ -276,7 +258,6 @@ const tasks = [
     level: 2,
     modeTags: ["classic", "dativ"],
     original: "Der Arzt hilft der Frau.",
-    translation: "The doctor helps the woman.",
     correct: "Er hilft ihr.",
     options: ["Er hilft ihr.", "Er hilft sie.", "Sie hilft ihr.", "Er hilft ihm."],
     explanation: "Der Arzt is masculine nominative -> er. Der Frau is dative feminine -> ihr.",
@@ -291,7 +272,6 @@ const tasks = [
     level: 2,
     modeTags: ["classic", "dativ"],
     original: "Die Eltern helfen den Kindern.",
-    translation: "The parents help the children.",
     correct: "Sie helfen ihnen.",
     options: ["Sie helfen ihnen.", "Sie helfen sie.", "Ihnen helfen sie.", "Sie helfen ihr."],
     explanation: "Die Eltern is plural nominative -> sie. Den Kindern is plural dative -> ihnen.",
@@ -306,7 +286,6 @@ const tasks = [
     level: 2,
     modeTags: ["classic", "dativ"],
     original: "Die Schülerin dankt dem Lehrer.",
-    translation: "The schoolgirl thanks the teacher.",
     correct: "Sie dankt ihm.",
     options: ["Sie dankt ihm.", "Sie dankt ihn.", "Ihr dankt ihm.", "Er dankt ihr."],
     explanation: "Die Schülerin is feminine nominative -> sie. Danken takes dative, so dem Lehrer -> ihm.",
@@ -321,7 +300,6 @@ const tasks = [
     level: 2,
     modeTags: ["classic", "dativ"],
     original: "Das Handy gehört der Mutter.",
-    translation: "The phone belongs to the mother.",
     correct: "Es gehört ihr.",
     options: ["Es gehört ihr.", "Es gehört sie.", "Er gehört ihr.", "Es gehört ihm."],
     explanation: "Das Handy is neuter nominative -> es. Gehören takes dative, so der Mutter -> ihr.",
@@ -336,7 +314,6 @@ const tasks = [
     level: 2,
     modeTags: ["classic", "dativ"],
     original: "Der Hund folgt dem Vater.",
-    translation: "The dog follows the father.",
     correct: "Er folgt ihm.",
     options: ["Er folgt ihm.", "Er folgt ihn.", "Es folgt ihm.", "Ihm folgt er."],
     explanation: "Der Hund is masculine nominative -> er. Folgen takes dative, so dem Vater -> ihm.",
@@ -351,7 +328,6 @@ const tasks = [
     level: 2,
     modeTags: ["classic", "dativ", "plural"],
     original: "Die Lehrerin antwortet den Schülern.",
-    translation: "The teacher answers the students.",
     correct: "Sie antwortet ihnen.",
     options: ["Sie antwortet ihnen.", "Sie antwortet sie.", "Er antwortet ihnen.", "Sie antwortet ihr."],
     explanation: "Die Lehrerin is feminine nominative -> sie. Den Schülern is plural dative -> ihnen.",
@@ -366,7 +342,6 @@ const tasks = [
     level: 3,
     modeTags: ["classic", "akkusativ", "informal"],
     original: "Der Arzt sieht dich.",
-    translation: "The doctor sees you.",
     correct: "Er sieht dich.",
     options: ["Er sieht dich.", "Er sieht dir.", "Ihn sieht dich.", "Er sieht Sie."],
     explanation: "Der Arzt is masculine nominative -> er. Dich is already informal accusative.",
@@ -381,7 +356,6 @@ const tasks = [
     level: 3,
     modeTags: ["classic", "dativ", "informal"],
     original: "Die Lehrerin hilft dir.",
-    translation: "The teacher helps you.",
     correct: "Sie hilft dir.",
     options: ["Sie hilft dir.", "Sie hilft dich.", "Er hilft dir.", "Sie hilft Ihnen."],
     explanation: "Die Lehrerin is feminine nominative -> sie. Dir is the informal dative form.",
@@ -396,7 +370,6 @@ const tasks = [
     level: 3,
     modeTags: ["classic", "formal", "akkusativ"],
     original: "Der Chef begrüßt Sie.",
-    translation: "The boss greets you formally.",
     correct: "Er begrüßt Sie.",
     options: ["Er begrüßt Sie.", "Er begrüßt Ihnen.", "Sie begrüßt ihn.", "Er begrüßt dich."],
     explanation: "Der Chef is masculine nominative -> er. Formal Sie stays Sie in accusative.",
@@ -411,7 +384,6 @@ const tasks = [
     level: 3,
     modeTags: ["classic", "formal", "dativ"],
     original: "Die Frau antwortet Ihnen.",
-    translation: "The woman answers you formally.",
     correct: "Sie antwortet Ihnen.",
     options: ["Sie antwortet Ihnen.", "Sie antwortet Sie.", "Er antwortet Ihnen.", "Sie antwortet dir."],
     explanation: "Die Frau is feminine nominative -> sie. Formal dative is Ihnen.",
@@ -426,7 +398,6 @@ const tasks = [
     level: 3,
     modeTags: ["classic", "akkusativ", "informal"],
     original: "Der Lehrer fragt mich.",
-    translation: "The teacher asks me.",
     correct: "Er fragt mich.",
     options: ["Er fragt mich.", "Er fragt mir.", "Ihn fragt mich.", "Er fragt uns."],
     explanation: "Der Lehrer is masculine nominative -> er. Mich is first-person accusative.",
@@ -441,7 +412,6 @@ const tasks = [
     level: 3,
     modeTags: ["classic", "dativ", "informal"],
     original: "Die Mutter hilft mir.",
-    translation: "The mother helps me.",
     correct: "Sie hilft mir.",
     options: ["Sie hilft mir.", "Sie hilft mich.", "Er hilft mir.", "Sie hilft uns."],
     explanation: "Die Mutter is feminine nominative -> sie. Helfen takes dative, so ich -> mir.",
@@ -456,7 +426,6 @@ const tasks = [
     level: 3,
     modeTags: ["classic", "akkusativ", "plural"],
     original: "Der Arzt sieht uns.",
-    translation: "The doctor sees us.",
     correct: "Er sieht uns.",
     options: ["Er sieht uns.", "Er sieht wir.", "Ihm sieht uns.", "Sie sieht euch."],
     explanation: "Der Arzt is masculine nominative -> er. Uns is the accusative form for wir.",
@@ -471,7 +440,6 @@ const tasks = [
     level: 3,
     modeTags: ["classic", "dativ", "plural"],
     original: "Die Lehrerin dankt euch.",
-    translation: "The teacher thanks you all.",
     correct: "Sie dankt euch.",
     options: ["Sie dankt euch.", "Sie dankt ihr.", "Sie dankt Sie.", "Er dankt euch."],
     explanation: "Die Lehrerin is feminine nominative -> sie. Euch is both accusative and dative for ihr.",
@@ -486,7 +454,6 @@ const tasks = [
     level: 3,
     modeTags: ["classic", "informal", "akkusativ"],
     original: "Die Kinder besuchen dich.",
-    translation: "The children visit you.",
     correct: "Sie besuchen dich.",
     options: ["Sie besuchen dich.", "Sie besuchen dir.", "Ihnen besuchen dich.", "Sie besuchen euch."],
     explanation: "Die Kinder is plural nominative -> sie. Dich is informal accusative.",
@@ -501,7 +468,6 @@ const tasks = [
     level: 3,
     modeTags: ["classic", "formal", "dativ"],
     original: "Der Schüler folgt Ihnen.",
-    translation: "The student follows you formally.",
     correct: "Er folgt Ihnen.",
     options: ["Er folgt Ihnen.", "Er folgt Sie.", "Ihn folgt Ihnen.", "Er folgt dir."],
     explanation: "Der Schüler is masculine nominative -> er. Folgen takes dative, and formal dative is Ihnen.",
@@ -516,7 +482,6 @@ const tasks = [
     level: 4,
     modeTags: ["classic", "dativ", "akkusativ", "twoObjects"],
     original: "Der Vater gibt dem Kind den Ball.",
-    translation: "The father gives the child the ball.",
     correct: "Er gibt ihn ihm.",
     options: ["Er gibt ihn ihm.", "Er gibt ihm ihn.", "Er gibt ihn es.", "Sie gibt ihn ihm."],
     explanation: "Der Vater -> er. Den Ball is masculine accusative -> ihn. Dem Kind is dative neuter -> ihm.",
@@ -532,7 +497,6 @@ const tasks = [
     level: 4,
     modeTags: ["classic", "dativ", "akkusativ", "twoObjects"],
     original: "Die Lehrerin erklärt dem Schüler die Aufgabe.",
-    translation: "The teacher explains the exercise to the student.",
     correct: "Sie erklärt sie ihm.",
     options: ["Sie erklärt sie ihm.", "Sie erklärt ihm sie.", "Sie erklärt ihr ihn.", "Er erklärt sie ihm."],
     explanation: "Die Lehrerin -> sie. Die Aufgabe is feminine accusative -> sie. Dem Schüler is dative masculine -> ihm.",
@@ -548,7 +512,6 @@ const tasks = [
     level: 4,
     modeTags: ["classic", "dativ", "akkusativ", "twoObjects"],
     original: "Der Mann schenkt der Frau die Blumen.",
-    translation: "The man gives the woman the flowers.",
     correct: "Er schenkt sie ihr.",
     options: ["Er schenkt sie ihr.", "Er schenkt ihr sie.", "Er schenkt ihnen sie.", "Sie schenkt sie ihm."],
     explanation: "Der Mann -> er. Die Blumen is plural accusative -> sie. Der Frau is dative feminine -> ihr.",
@@ -564,7 +527,6 @@ const tasks = [
     level: 4,
     modeTags: ["classic", "dativ", "akkusativ", "twoObjects"],
     original: "Die Mutter schenkt der Tochter die Tasche.",
-    translation: "The mother gives the daughter the bag.",
     correct: "Sie schenkt sie ihr.",
     options: ["Sie schenkt sie ihr.", "Sie schenkt ihr sie.", "Er schenkt sie ihr.", "Sie schenkt ihn ihr."],
     explanation: "Die Mutter -> sie. Die Tasche is feminine accusative -> sie. Der Tochter is dative feminine -> ihr.",
@@ -580,7 +542,6 @@ const tasks = [
     level: 4,
     modeTags: ["classic", "dativ", "akkusativ", "twoObjects"],
     original: "Der Chef zeigt dem Arzt das Handy.",
-    translation: "The boss shows the phone to the doctor.",
     correct: "Er zeigt es ihm.",
     options: ["Er zeigt es ihm.", "Er zeigt ihm es.", "Er zeigt ihn ihm.", "Sie zeigt es ihm."],
     explanation: "Der Chef -> er. Das Handy is neuter accusative -> es. Dem Arzt is dative masculine -> ihm.",
@@ -596,7 +557,6 @@ const tasks = [
     level: 4,
     modeTags: ["classic", "dativ", "akkusativ", "twoObjects"],
     original: "Die Schülerin gibt dem Lehrer das Buch.",
-    translation: "The schoolgirl gives the teacher the book.",
     correct: "Sie gibt es ihm.",
     options: ["Sie gibt es ihm.", "Sie gibt ihm es.", "Sie gibt ihn ihm.", "Er gibt es ihr."],
     explanation: "Die Schülerin -> sie. Das Buch is neuter accusative -> es. Dem Lehrer is dative masculine -> ihm.",
@@ -612,7 +572,6 @@ const tasks = [
     level: 4,
     modeTags: ["classic", "dativ", "akkusativ", "twoObjects"],
     original: "Der Lehrer bringt den Kindern das Buch.",
-    translation: "The teacher brings the children the book.",
     correct: "Er bringt es ihnen.",
     options: ["Er bringt es ihnen.", "Er bringt ihnen es.", "Er bringt ihn ihnen.", "Sie bringt es ihnen."],
     explanation: "Der Lehrer -> er. Das Buch is neuter accusative -> es. Den Kindern is dative plural -> ihnen.",
@@ -628,7 +587,6 @@ const tasks = [
     level: 4,
     modeTags: ["classic", "dativ", "akkusativ", "twoObjects"],
     original: "Die Eltern kaufen dem Kind das Auto.",
-    translation: "The parents buy the child the car.",
     correct: "Sie kaufen es ihm.",
     options: ["Sie kaufen es ihm.", "Sie kaufen ihm es.", "Sie kaufen sie ihm.", "Ihnen kaufen es ihm."],
     explanation: "Die Eltern -> sie. Das Auto is neuter accusative -> es. Dem Kind is dative neuter -> ihm.",
@@ -644,7 +602,6 @@ const tasks = [
     level: 4,
     modeTags: ["classic", "dativ", "akkusativ", "twoObjects"],
     original: "Der Arzt gibt der Frau das Rezept.",
-    translation: "The doctor gives the woman the prescription.",
     correct: "Er gibt es ihr.",
     options: ["Er gibt es ihr.", "Er gibt ihr es.", "Er gibt sie ihr.", "Sie gibt es ihm."],
     explanation: "Der Arzt -> er. Das Rezept is neuter accusative -> es. Der Frau is dative feminine -> ihr.",
@@ -660,7 +617,6 @@ const tasks = [
     level: 4,
     modeTags: ["classic", "dativ", "akkusativ", "twoObjects"],
     original: "Die Frau zeigt dem Mann die Tasche.",
-    translation: "The woman shows the man the bag.",
     correct: "Sie zeigt sie ihm.",
     options: ["Sie zeigt sie ihm.", "Sie zeigt ihm sie.", "Sie zeigt ihn ihm.", "Er zeigt sie ihr."],
     explanation: "Die Frau -> sie. Die Tasche is feminine accusative -> sie. Dem Mann is dative masculine -> ihm.",
@@ -676,7 +632,6 @@ const tasks = [
     level: 4,
     modeTags: ["classic", "dativ", "akkusativ", "twoObjects"],
     original: "Der Schüler erklärt der Lehrerin den Satz.",
-    translation: "The student explains the sentence to the teacher.",
     correct: "Er erklärt ihn ihr.",
     options: ["Er erklärt ihn ihr.", "Er erklärt ihr ihn.", "Er erklärt ihm sie.", "Sie erklärt ihn ihm."],
     explanation: "Der Schüler -> er. Den Satz is masculine accusative -> ihn. Der Lehrerin is dative feminine -> ihr.",
@@ -692,7 +647,6 @@ const tasks = [
     level: 4,
     modeTags: ["classic", "dativ", "akkusativ", "twoObjects"],
     original: "Die Mutter bringt dem Vater die Schlüssel.",
-    translation: "The mother brings the father the keys.",
     correct: "Sie bringt sie ihm.",
     options: ["Sie bringt sie ihm.", "Sie bringt ihm sie.", "Sie bringt ihn ihr.", "Er bringt sie ihr."],
     explanation: "Die Mutter -> sie. Die Schlüssel is plural accusative -> sie. Dem Vater is dative masculine -> ihm.",
@@ -708,7 +662,6 @@ const tasks = [
     level: 5,
     modeTags: ["classic", "preposition", "dativ"],
     original: "Die Frau spricht mit dem Arzt.",
-    translation: "The woman speaks with the doctor.",
     correct: "Sie spricht mit ihm.",
     options: ["Sie spricht mit ihm.", "Sie spricht mit ihn.", "Er spricht mit ihr.", "Sie spricht für ihn."],
     explanation: "Die Frau -> sie. Mit always takes dative, so dem Arzt -> ihm.",
@@ -723,7 +676,6 @@ const tasks = [
     level: 5,
     modeTags: ["classic", "preposition", "akkusativ"],
     original: "Der Junge wartet auf die Mutter.",
-    translation: "The boy waits for the mother.",
     correct: "Er wartet auf sie.",
     options: ["Er wartet auf sie.", "Er wartet auf ihr.", "Sie wartet auf ihn.", "Er wartet mit ihr."],
     explanation: "Der Junge -> er. Auf with warten auf takes accusative here; die Mutter -> sie.",
@@ -738,7 +690,6 @@ const tasks = [
     level: 5,
     modeTags: ["classic", "preposition", "akkusativ"],
     original: "Der Mann kauft ein Geschenk für die Tochter.",
-    translation: "The man buys a gift for the daughter.",
     correct: "Er kauft es für sie.",
     options: ["Er kauft es für sie.", "Er kauft ihn für ihr.", "Er kauft es für ihr.", "Sie kauft es für ihn."],
     explanation: "Der Mann -> er. Ein Geschenk is neuter accusative -> es. Für always takes accusative, so die Tochter -> sie.",
@@ -754,7 +705,6 @@ const tasks = [
     level: 5,
     modeTags: ["classic", "preposition", "dativ"],
     original: "Der Schüler geht zu der Lehrerin.",
-    translation: "The student goes to the teacher.",
     correct: "Er geht zu ihr.",
     options: ["Er geht zu ihr.", "Er geht zu sie.", "Sie geht zu ihm.", "Er geht für sie."],
     explanation: "Der Schüler -> er. Zu always takes dative, so der Lehrerin -> ihr.",
@@ -769,7 +719,6 @@ const tasks = [
     level: 5,
     modeTags: ["classic", "preposition", "dativ"],
     original: "Das Kind bleibt bei dem Vater.",
-    translation: "The child stays with the father.",
     correct: "Es bleibt bei ihm.",
     options: ["Es bleibt bei ihm.", "Es bleibt bei ihn.", "Er bleibt bei ihm.", "Es bleibt ohne ihn."],
     explanation: "Das Kind -> es. Bei always takes dative, so dem Vater -> ihm.",
@@ -784,7 +733,6 @@ const tasks = [
     level: 5,
     modeTags: ["classic", "preposition", "dativ"],
     original: "Die Tasche ist von der Mutter.",
-    translation: "The bag is from the mother.",
     correct: "Sie ist von ihr.",
     options: ["Sie ist von ihr.", "Sie ist von sie.", "Er ist von ihr.", "Sie ist für sie."],
     explanation: "Die Tasche -> sie. Von always takes dative, so der Mutter -> ihr.",
@@ -799,7 +747,6 @@ const tasks = [
     level: 5,
     modeTags: ["classic", "preposition", "akkusativ"],
     original: "Der Lehrer arbeitet ohne den Schüler.",
-    translation: "The teacher works without the student.",
     correct: "Er arbeitet ohne ihn.",
     options: ["Er arbeitet ohne ihn.", "Er arbeitet ohne ihm.", "Sie arbeitet ohne ihn.", "Er arbeitet mit ihm."],
     explanation: "Der Lehrer -> er. Ohne always takes accusative, so den Schüler -> ihn.",
@@ -814,7 +761,6 @@ const tasks = [
     level: 5,
     modeTags: ["classic", "preposition", "akkusativ"],
     original: "Die Kinder laufen durch den Park.",
-    translation: "The children run through the park.",
     correct: "Sie laufen durch ihn.",
     options: ["Sie laufen durch ihn.", "Sie laufen durch ihm.", "Ihnen laufen durch ihn.", "Sie laufen bei ihm."],
     explanation: "Die Kinder -> sie. Durch always takes accusative, so den Park -> ihn.",
@@ -829,7 +775,6 @@ const tasks = [
     level: 5,
     modeTags: ["classic", "preposition", "akkusativ"],
     original: "Der Hund läuft gegen den Stuhl.",
-    translation: "The dog runs against the chair.",
     correct: "Er läuft gegen ihn.",
     options: ["Er läuft gegen ihn.", "Er läuft gegen ihm.", "Es läuft gegen ihn.", "Er läuft bei ihm."],
     explanation: "Der Hund -> er. Gegen always takes accusative, so den Stuhl -> ihn.",
@@ -844,7 +789,6 @@ const tasks = [
     level: 5,
     modeTags: ["classic", "preposition", "dativ", "plural"],
     original: "Die Lehrerin spricht mit den Eltern.",
-    translation: "The teacher speaks with the parents.",
     correct: "Sie spricht mit ihnen.",
     options: ["Sie spricht mit ihnen.", "Sie spricht mit sie.", "Er spricht mit ihnen.", "Sie spricht für sie."],
     explanation: "Die Lehrerin -> sie. Mit takes dative; den Eltern is dative plural -> ihnen.",
@@ -859,7 +803,6 @@ const tasks = [
     level: 5,
     modeTags: ["classic", "preposition", "akkusativ", "formal"],
     original: "Der Chef wartet auf Sie.",
-    translation: "The boss waits for you formally.",
     correct: "Er wartet auf Sie.",
     options: ["Er wartet auf Sie.", "Er wartet auf Ihnen.", "Er wartet auf dich.", "Sie wartet auf Sie."],
     explanation: "Der Chef -> er. Warten auf uses accusative; formal accusative is Sie.",
@@ -874,7 +817,6 @@ const tasks = [
     level: 5,
     modeTags: ["classic", "preposition", "dativ", "informal"],
     original: "Die Frau kommt von dir.",
-    translation: "The woman comes from you.",
     correct: "Sie kommt von dir.",
     options: ["Sie kommt von dir.", "Sie kommt von dich.", "Er kommt von dir.", "Sie kommt für dich."],
     explanation: "Die Frau -> sie. Von always takes dative, and du in dative is dir.",
@@ -889,7 +831,6 @@ const tasks = [
     level: 6,
     modeTags: ["classic", "preposition", "dativ", "location"],
     original: "Die Tasse steht auf dem Tisch.",
-    translation: "The cup is standing on the table.",
     correct: "Sie steht auf ihm.",
     options: ["Sie steht auf ihm.", "Sie steht auf ihn.", "Er steht auf ihm.", "Sie steht auf ihr."],
     explanation: "Die Tasse -> sie. Static location with auf takes dative; dem Tisch -> ihm. For things, darauf can sound more natural.",
@@ -904,7 +845,6 @@ const tasks = [
     level: 6,
     modeTags: ["classic", "preposition", "dativ", "location"],
     original: "Der Ball liegt unter dem Stuhl.",
-    translation: "The ball lies under the chair.",
     correct: "Er liegt unter ihm.",
     options: ["Er liegt unter ihm.", "Er liegt unter ihn.", "Es liegt unter ihm.", "Er liegt unter ihr."],
     explanation: "Der Ball -> er. Static location with unter takes dative; dem Stuhl -> ihm.",
@@ -919,7 +859,6 @@ const tasks = [
     level: 6,
     modeTags: ["classic", "preposition", "dativ", "location"],
     original: "Das Bild hängt an der Wand.",
-    translation: "The picture hangs on the wall.",
     correct: "Es hängt an ihr.",
     options: ["Es hängt an ihr.", "Es hängt an sie.", "Er hängt an ihr.", "Es hängt auf ihr."],
     explanation: "Das Bild -> es. Static location with an takes dative; der Wand -> ihr.",
@@ -934,7 +873,6 @@ const tasks = [
     level: 6,
     modeTags: ["classic", "preposition", "dativ", "location", "plural"],
     original: "Die Tasche liegt neben den Schuhen.",
-    translation: "The bag lies next to the shoes.",
     correct: "Sie liegt neben ihnen.",
     options: ["Sie liegt neben ihnen.", "Sie liegt neben sie.", "Er liegt neben ihnen.", "Sie liegt neben ihr."],
     explanation: "Die Tasche -> sie. Static location with neben takes dative; den Schuhen -> ihnen.",
@@ -949,7 +887,6 @@ const tasks = [
     level: 6,
     modeTags: ["classic", "preposition", "dativ", "location"],
     original: "Das Handy liegt in der Tasche.",
-    translation: "The phone lies in the bag.",
     correct: "Es liegt in ihr.",
     options: ["Es liegt in ihr.", "Es liegt in sie.", "Er liegt in ihr.", "Es liegt in ihm."],
     explanation: "Das Handy -> es. Static location with in takes dative; der Tasche -> ihr.",
@@ -964,7 +901,6 @@ const tasks = [
     level: 6,
     modeTags: ["classic", "preposition", "dativ", "location"],
     original: "Der Stuhl steht vor dem Tisch.",
-    translation: "The chair stands in front of the table.",
     correct: "Er steht vor ihm.",
     options: ["Er steht vor ihm.", "Er steht vor ihn.", "Es steht vor ihm.", "Er steht vor ihr."],
     explanation: "Der Stuhl -> er. Static location with vor takes dative; dem Tisch -> ihm.",
@@ -979,7 +915,6 @@ const tasks = [
     level: 6,
     modeTags: ["classic", "preposition", "dativ", "location"],
     original: "Das Buch liegt hinter der Tasche.",
-    translation: "The book lies behind the bag.",
     correct: "Es liegt hinter ihr.",
     options: ["Es liegt hinter ihr.", "Es liegt hinter sie.", "Er liegt hinter ihr.", "Es liegt hinter ihm."],
     explanation: "Das Buch -> es. Static location with hinter takes dative; der Tasche -> ihr.",
@@ -994,7 +929,6 @@ const tasks = [
     level: 6,
     modeTags: ["classic", "preposition", "akkusativ", "location"],
     original: "Der Junge legt den Ball unter den Stuhl.",
-    translation: "The boy puts the ball under the chair.",
     correct: "Er legt ihn unter ihn.",
     options: ["Er legt ihn unter ihn.", "Er legt ihn unter ihm.", "Er legt ihm unter ihn.", "Sie legt ihn unter ihn."],
     explanation: "Der Junge -> er. Den Ball -> ihn. Direction with unter takes accusative; den Stuhl -> ihn.",
@@ -1010,7 +944,6 @@ const tasks = [
     level: 6,
     modeTags: ["classic", "preposition", "akkusativ", "location"],
     original: "Die Frau stellt die Tasse auf den Tisch.",
-    translation: "The woman puts the cup on the table.",
     correct: "Sie stellt sie auf ihn.",
     options: ["Sie stellt sie auf ihn.", "Sie stellt sie auf ihm.", "Sie stellt ihr auf ihn.", "Er stellt sie auf ihn."],
     explanation: "Die Frau -> sie. Die Tasse -> sie. Direction with auf takes accusative; den Tisch -> ihn.",
@@ -1026,7 +959,6 @@ const tasks = [
     level: 6,
     modeTags: ["classic", "preposition", "dativ", "location"],
     original: "Die Katze sitzt zwischen den Kindern.",
-    translation: "The cat sits between the children.",
     correct: "Sie sitzt zwischen ihnen.",
     options: ["Sie sitzt zwischen ihnen.", "Sie sitzt zwischen sie.", "Er sitzt zwischen ihnen.", "Sie sitzt zwischen ihr."],
     explanation: "Die Katze -> sie. Static location with zwischen takes dative; den Kindern -> ihnen.",
@@ -1041,7 +973,6 @@ const tasks = [
     level: 7,
     modeTags: ["classic", "mixed", "dativ"],
     original: "Der Mann hilft der Frau.",
-    translation: "The man helps the woman.",
     correct: "Er hilft ihr.",
     options: ["Er hilft ihr.", "Er hilft sie.", "Ihn hilft ihr.", "Sie hilft ihm."],
     explanation: "Der Mann -> er. Helfen takes dative; der Frau -> ihr.",
@@ -1056,7 +987,6 @@ const tasks = [
     level: 7,
     modeTags: ["classic", "mixed", "akkusativ"],
     original: "Die Lehrerin besucht den Schüler.",
-    translation: "The teacher visits the student.",
     correct: "Sie besucht ihn.",
     options: ["Sie besucht ihn.", "Sie besucht ihm.", "Er besucht ihn.", "Sie besucht ihr."],
     explanation: "Die Lehrerin -> sie. Den Schüler is masculine accusative -> ihn.",
@@ -1071,7 +1001,6 @@ const tasks = [
     level: 7,
     modeTags: ["classic", "mixed", "preposition", "dativ"],
     original: "Das Kind spielt mit der Katze.",
-    translation: "The child plays with the cat.",
     correct: "Es spielt mit ihr.",
     options: ["Es spielt mit ihr.", "Es spielt mit sie.", "Er spielt mit ihr.", "Es spielt für sie."],
     explanation: "Das Kind -> es. Mit takes dative; der Katze -> ihr.",
@@ -1086,7 +1015,6 @@ const tasks = [
     level: 7,
     modeTags: ["classic", "mixed", "twoObjects"],
     original: "Die Eltern geben dem Lehrer das Handy.",
-    translation: "The parents give the teacher the phone.",
     correct: "Sie geben es ihm.",
     options: ["Sie geben es ihm.", "Sie geben ihm es.", "Sie geben ihn ihm.", "Ihnen geben es ihm."],
     explanation: "Die Eltern -> sie. Das Handy -> es. Dem Lehrer -> ihm.",
@@ -1102,7 +1030,6 @@ const tasks = [
     level: 7,
     modeTags: ["classic", "mixed", "formal"],
     original: "Der Arzt antwortet Ihnen.",
-    translation: "The doctor answers you formally.",
     correct: "Er antwortet Ihnen.",
     options: ["Er antwortet Ihnen.", "Er antwortet Sie.", "Sie antwortet Ihnen.", "Er antwortet dir."],
     explanation: "Der Arzt -> er. Antworten takes dative; formal dative is Ihnen.",
@@ -1117,7 +1044,6 @@ const tasks = [
     level: 7,
     modeTags: ["classic", "mixed", "plural", "dativ"],
     original: "Die Lehrerin hilft den Kindern.",
-    translation: "The teacher helps the children.",
     correct: "Sie hilft ihnen.",
     options: ["Sie hilft ihnen.", "Sie hilft sie.", "Er hilft ihnen.", "Sie hilft ihr."],
     explanation: "Die Lehrerin -> sie. Den Kindern is dative plural -> ihnen.",
@@ -1132,7 +1058,6 @@ const tasks = [
     level: 8,
     modeTags: ["classic", "boss", "twoObjects", "dativ", "akkusativ"],
     original: "Die Lehrerin gibt dem Schüler das Buch.",
-    translation: "The teacher gives the student the book.",
     correct: "Sie gibt es ihm.",
     options: ["Sie gibt es ihm.", "Sie gibt ihm es.", "Er gibt es ihm.", "Sie gibt ihn ihr."],
     explanation: "Die Lehrerin -> sie. Das Buch -> es. Dem Schüler -> ihm. With two pronouns, accusative usually comes before dative.",
@@ -1148,7 +1073,6 @@ const tasks = [
     level: 8,
     modeTags: ["classic", "boss", "preposition", "formal"],
     original: "Der Chef spricht mit Ihnen über den Plan.",
-    translation: "The boss speaks with you about the plan.",
     correct: "Er spricht mit Ihnen über ihn.",
     options: ["Er spricht mit Ihnen über ihn.", "Er spricht mit Sie über ihn.", "Er spricht mit Ihnen über ihm.", "Sie spricht mit Ihnen über ihn."],
     explanation: "Der Chef -> er. Mit takes dative, formal dative is Ihnen. Über in this topic phrase takes accusative; den Plan -> ihn.",
@@ -1164,7 +1088,6 @@ const tasks = [
     level: 8,
     modeTags: ["classic", "boss", "twoObjects", "plural"],
     original: "Der Vater zeigt den Kindern das Auto.",
-    translation: "The father shows the children the car.",
     correct: "Er zeigt es ihnen.",
     options: ["Er zeigt es ihnen.", "Er zeigt ihnen es.", "Er zeigt ihn ihnen.", "Sie zeigt es ihnen."],
     explanation: "Der Vater -> er. Das Auto -> es. Den Kindern is dative plural -> ihnen.",
@@ -1180,7 +1103,6 @@ const tasks = [
     level: 8,
     modeTags: ["classic", "boss", "preposition", "location", "akkusativ"],
     original: "Die Mutter stellt die Tasche neben den Stuhl.",
-    translation: "The mother puts the bag next to the chair.",
     correct: "Sie stellt sie neben ihn.",
     options: ["Sie stellt sie neben ihn.", "Sie stellt sie neben ihm.", "Er stellt sie neben ihn.", "Sie stellt ihr neben ihn."],
     explanation: "Die Mutter -> sie. Die Tasche -> sie. Direction with neben takes accusative; den Stuhl -> ihn.",
@@ -1196,7 +1118,6 @@ const tasks = [
     level: 8,
     modeTags: ["classic", "boss", "preposition", "dativ", "informal"],
     original: "Der Lehrer spricht mit dir über die Aufgabe.",
-    translation: "The teacher speaks with you about the exercise.",
     correct: "Er spricht mit dir über sie.",
     options: ["Er spricht mit dir über sie.", "Er spricht mit dich über sie.", "Er spricht mit dir über ihr.", "Sie spricht mit dir über sie."],
     explanation: "Der Lehrer -> er. Mit takes dative, so dir. Über die Aufgabe uses accusative here -> sie.",
@@ -1212,7 +1133,6 @@ const tasks = [
     level: 8,
     modeTags: ["classic", "boss", "twoObjects", "preposition", "plural"],
     original: "Die Eltern kaufen den Kindern die Bücher für die Schule.",
-    translation: "The parents buy the children the books for school.",
     correct: "Sie kaufen sie ihnen für sie.",
     options: ["Sie kaufen sie ihnen für sie.", "Sie kaufen ihnen sie für ihr.", "Sie kaufen sie sie für ihnen.", "Ihnen kaufen sie ihnen für sie."],
     explanation: "Die Eltern -> sie. Die Bücher -> sie. Den Kindern -> ihnen. Für takes accusative; die Schule -> sie.",
@@ -1273,7 +1193,6 @@ function cacheElements() {
   els.timerBox = document.getElementById("timerBox");
   els.progressText = document.getElementById("progressText");
   els.originalSentence = document.getElementById("originalSentence");
-  els.translationText = document.getElementById("translationText");
   els.tagList = document.getElementById("tagList");
   els.hintBox = document.getElementById("hintBox");
   els.hintButton = document.getElementById("hintButton");
@@ -1308,11 +1227,11 @@ function bindEvents() {
 
 function renderModeButtons() {
   const modes = [
-    { id: "classic", label: "Classic" },
-    { id: "speed", label: "Speed" },
-    { id: "minimalPair", label: "Minimal Pairs" },
+    { id: "classic", label: "Klassisch" },
+    { id: "speed", label: "Zeit" },
+    { id: "minimalPair", label: "Paare" },
     { id: "boss", label: "Boss" },
-    { id: "mistakes", label: "Mistake Review" }
+    { id: "mistakes", label: "Fehler" }
   ];
 
   els.modeButtons.innerHTML = "";
@@ -1334,7 +1253,7 @@ function renderLevelButtons() {
     button.type = "button";
     button.className = "level-button";
     button.textContent = level;
-    button.title = level > state.levelUnlocked ? "Free Practice: level not unlocked yet" : `Level ${level}`;
+    button.title = level > state.levelUnlocked ? "Freies Üben: Stufe noch nicht freigeschaltet" : `Stufe ${level}`;
     if (level > state.levelUnlocked) {
       button.classList.add("locked");
     }
@@ -1363,7 +1282,6 @@ function renderTask() {
 
   els.gameOverPanel.classList.add("hidden");
   els.originalSentence.textContent = state.currentTask.original;
-  els.translationText.textContent = state.currentTask.translation || "";
   els.hintBox.textContent = "";
   els.hintBox.classList.add("hidden");
   els.hintButton.disabled = false;
@@ -1397,10 +1315,10 @@ function renderTags(task) {
       dativ: "Dativ",
       nominativ: "Nominativ",
       preposition: "Präposition",
-      formal: "Formal",
-      informal: "Informal",
+      formal: "Formell",
+      informal: "Informell",
       plural: "Plural",
-      twoObjects: "Two objects",
+      twoObjects: "Zwei Objekte",
       boss: "Boss",
       location: "Wechselpräposition"
     };
@@ -1472,15 +1390,15 @@ function showFeedback(isCorrect) {
   const speedCorrect = state.currentMode === "speed" && isCorrect;
   els.feedbackPanel.className = `feedback-panel ${isCorrect ? "correct" : "wrong"}`;
   els.feedbackPanel.classList.remove("hidden");
-  els.feedbackTitle.textContent = isCorrect ? "Correct" : "Not quite";
-  els.correctAnswerText.textContent = `Correct answer: ${state.currentTask.correct}`;
-  els.explanationText.textContent = speedCorrect ? "Nice. Keep going." : state.currentTask.explanation;
+  els.feedbackTitle.textContent = isCorrect ? "Richtig" : "Fast";
+  els.correctAnswerText.textContent = `Richtige Antwort: ${state.currentTask.correct}`;
+  els.explanationText.textContent = speedCorrect ? "Gut. Weiter so." : buildGermanExplanation(state.currentTask);
   els.caseLogicList.innerHTML = "";
 
   if (!speedCorrect) {
     state.currentTask.replacements.forEach((item) => {
       const li = document.createElement("li");
-      li.textContent = `${item.noun} -> ${item.pronoun} (${item.case}, ${item.gender}, ${item.number})`;
+      li.textContent = `${item.noun} wird ${item.pronoun} (${item.case}, ${item.gender}, ${item.number})`;
       els.caseLogicList.appendChild(li);
     });
   }
@@ -1556,14 +1474,21 @@ function getTasksForCurrentMode() {
 function showHint() {
   if (!state.currentTask || state.answered) return;
   state.usedHint = true;
-  els.hintBox.textContent = state.currentTask.hint || buildFallbackHint(state.currentTask);
+  els.hintBox.textContent = buildFallbackHint(state.currentTask);
   els.hintBox.classList.remove("hidden");
   els.hintButton.disabled = true;
 }
 
 function buildFallbackHint(task) {
   const first = task.replacements.find((item) => item.case !== "Nominativ") || task.replacements[0];
-  return `${first.noun} = ${first.case} ${first.gender}`;
+  return `${first.noun} = ${first.case}, ${first.gender}`;
+}
+
+function buildGermanExplanation(task) {
+  const parts = task.replacements.map((item) => {
+    return `${item.noun} wird ${item.pronoun}: ${item.case}, ${item.gender}, ${item.number}.`;
+  });
+  return `${parts.join(" ")} Richtiger Satz: ${task.correct}`;
 }
 
 function tickSpeedTimer() {
@@ -1587,8 +1512,8 @@ function stopSpeedTimer() {
 function showSpeedSummary() {
   state.answered = true;
   els.gameOverPanel.classList.remove("hidden");
-  els.gameOverPanel.querySelector("h2").textContent = "Speed Result";
-  els.gameOverSummary.textContent = `Correct: ${state.speedCorrect}. Wrong: ${state.speedWrong}. Best speed score: ${state.bestSpeedModeScore}.`;
+  els.gameOverPanel.querySelector("h2").textContent = "Zeit-Ergebnis";
+  els.gameOverSummary.textContent = `Richtig: ${state.speedCorrect}. Falsch: ${state.speedWrong}. Bester Zeitwert: ${state.bestSpeedModeScore}.`;
   [...els.answerButtons.querySelectorAll(".answer-button")].forEach((button) => {
     button.disabled = true;
   });
@@ -1596,10 +1521,10 @@ function showSpeedSummary() {
 
 function showGameOver() {
   els.gameOverPanel.classList.remove("hidden");
-  els.gameOverPanel.querySelector("h2").textContent = "Game Over";
+  els.gameOverPanel.querySelector("h2").textContent = "Spiel vorbei";
   const wrong = state.mistakeIds.length;
   const correct = state.completedTasks.length;
-  els.gameOverSummary.textContent = `Score: ${state.score}. Completed tasks: ${correct}. Saved mistakes: ${wrong}.`;
+  els.gameOverSummary.textContent = `Punkte: ${state.score}. Gelöste Aufgaben: ${correct}. Gespeicherte Fehler: ${wrong}.`;
 }
 
 function restartGame() {
@@ -1615,10 +1540,7 @@ function restartGame() {
 
 function showEmptyMode() {
   state.currentTask = null;
-  els.originalSentence.textContent = "No tasks here yet.";
-  els.translationText.textContent = state.currentMode === "mistakes"
-    ? "Make a few mistakes first, then come back for targeted practice."
-    : "Try another mode or level.";
+  els.originalSentence.textContent = "Hier gibt es noch keine Aufgaben.";
   els.tagList.innerHTML = "";
   els.answerButtons.innerHTML = "";
   els.hintButton.classList.add("hidden");
@@ -1657,8 +1579,8 @@ function updateStats() {
   els.heartsLabel.textContent = state.currentMode === "speed" ? "∞" : "♥ ".repeat(Math.max(state.hearts, 0)).trim();
   const count = state.correctCountByLevel[state.currentLevel] || 0;
   els.progressText.textContent = state.currentMode === "speed"
-    ? `Speed mode: ${state.speedCorrect} correct, ${state.speedWrong} wrong`
-    : `Level ${state.currentLevel} progress: ${Math.min(count, 8)} / 8`;
+    ? `Zeit: ${state.speedCorrect} richtig, ${state.speedWrong} falsch`
+    : `Stufe ${state.currentLevel}: ${Math.min(count, 8)} / 8`;
   renderWeakSpots();
   renderModeButtonsState();
   renderLevelButtonsState();
@@ -1681,7 +1603,7 @@ function renderLevelButtonsState() {
 function renderWeakSpots() {
   const entries = Object.entries(state.weakSpots).sort((a, b) => b[1] - a[1]);
   if (entries.length === 0) {
-    els.weakSpotStats.textContent = "No mistakes yet.";
+    els.weakSpotStats.textContent = "Noch keine Fehler.";
     return;
   }
 
@@ -1689,7 +1611,7 @@ function renderWeakSpots() {
   entries.forEach(([tag, count]) => {
     const chip = document.createElement("span");
     chip.className = "weak-chip";
-    chip.textContent = `${formatTag(tag)}: ${count} mistakes`;
+    chip.textContent = `${formatTag(tag)}: ${count} Fehler`;
     els.weakSpotStats.appendChild(chip);
   });
 }
@@ -1711,10 +1633,10 @@ function renderCheatSheet() {
       </div>
     </div>
     <ul class="note-list">
-      <li>sehen, kaufen, finden, besuchen usually need Akkusativ.</li>
-      <li>helfen, danken, antworten, gehören need Dativ.</li>
-      <li>mit, zu, bei, von always take Dativ.</li>
-      <li>für, ohne, gegen, durch always take Akkusativ.</li>
+      <li>sehen, kaufen, finden, besuchen brauchen meistens Akkusativ.</li>
+      <li>helfen, danken, antworten, gehören brauchen Dativ.</li>
+      <li>mit, zu, bei, von stehen immer mit Dativ.</li>
+      <li>für, ohne, gegen, durch stehen immer mit Akkusativ.</li>
     </ul>
   `;
 }
@@ -1752,7 +1674,7 @@ function loadProgress() {
 }
 
 function resetProgress() {
-  const confirmed = window.confirm("Reset score, unlocks, mistake list, and weak spots?");
+  const confirmed = window.confirm("Punkte, Stufen, Fehlerliste und schwache Stellen löschen?");
   if (!confirmed) return;
   localStorage.removeItem(STORAGE_KEY);
   state.currentLevel = 1;
@@ -1798,12 +1720,13 @@ function formatTag(tag) {
     nominativ: "Nominativ",
     akkusativ: "Akkusativ",
     dativ: "Dativ",
-    formal: "Formal",
+    formal: "Formell",
     plural: "Plural",
-    preposition: "Preposition",
-    twoObjects: "Two objects"
+    preposition: "Präposition",
+    twoObjects: "Zwei Objekte"
   };
   return labels[tag] || tag;
 }
 
 document.addEventListener("DOMContentLoaded", initApp);
+

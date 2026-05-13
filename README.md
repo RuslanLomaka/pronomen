@@ -45,7 +45,6 @@ Example task:
   level: 1,
   modeTags: ["classic", "akkusativ"],
   original: "Der Mann sieht den Hund.",
-  translation: "The man sees the dog.",
   correct: "Er sieht ihn.",
   options: [
     "Er sieht ihn.",

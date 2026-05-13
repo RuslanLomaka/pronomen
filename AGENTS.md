@@ -35,7 +35,6 @@ Each task should include:
 - `level`
 - `modeTags`
 - `original`
-- `translation`
 - `correct`
 - `options`
 - `explanation`
