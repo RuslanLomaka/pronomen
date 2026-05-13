@@ -272,13 +272,14 @@ main {
 .task-header {
   display: flex;
   justify-content: space-between;
-  gap: 18px;
+  gap: 8px;
+  align-items: flex-start;
 }
 
 #originalSentence {
   font-size: clamp(2rem, 5vw, 4.2rem);
   line-height: 1.1;
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 
 .translation {
@@ -291,21 +292,22 @@ main {
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: flex-end;
-  gap: 8px;
+  gap: 4px;
   max-width: 360px;
+  margin: 2px 0 0;
 }
 
 .tag {
   background: var(--accent-soft);
   color: var(--accent);
   border-radius: 999px;
-  padding: 7px 10px;
-  font-size: 0.82rem;
+  padding: 4px 7px;
+  font-size: 0.78rem;
   font-weight: 700;
 }
 
 .hint-box {
-  margin: 12px 0;
+  margin: 8px 0 0;
   padding: 12px;
   color: var(--hint-text);
   background: var(--hint-bg);
@@ -314,11 +316,15 @@ main {
   font-weight: 700;
 }
 
+.hint-button {
+  margin-top: 8px;
+}
+
 .answers-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
-  margin-top: 18px;
+  margin-top: 10px;
 }
 
 .answer-button {
@@ -592,12 +598,12 @@ main {
   }
 
   .tag {
-    padding: 5px 8px;
+    padding: 3px 6px;
   }
 
   .answers-grid {
     gap: 8px;
-    margin-top: 12px;
+    margin-top: 8px;
   }
 
   .tag-list {

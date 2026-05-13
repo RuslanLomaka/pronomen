@@ -1382,6 +1382,7 @@ function checkAnswer(index) {
   if (state.answered || !state.currentTask || state.hearts <= 0) return;
 
   state.answered = true;
+  els.hintButton.classList.add("hidden");
   const selected = state.currentOptions[index];
   const isCorrect = selected === state.currentTask.correct;
   const buttons = [...els.answerButtons.querySelectorAll(".answer-button")];
