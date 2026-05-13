@@ -16,10 +16,6 @@
       </div>
       <div class="stats-grid" aria-label="Game statistics">
         <div class="stat">
-          <span>Stufe</span>
-          <strong id="currentLevelLabel">1</strong>
-        </div>
-        <div class="stat">
           <span>Punkte</span>
           <strong id="scoreLabel">0</strong>
         </div>
@@ -35,24 +31,31 @@
     </header>
 
     <main>
-      <section class="control-band" aria-label="Game controls">
-        <div>
-          <h2>Modus</h2>
-          <div class="button-row" id="modeButtons"></div>
-        </div>
-        <div>
-          <h2>Stufe</h2>
-          <div class="level-grid" id="levelButtons"></div>
-          <p class="level-description" id="levelDescription">Stufe 1: einfache Sätze mit Nominativ und Akkusativ.</p>
-        </div>
-      </section>
+      <details class="controls-disclosure" id="controlsDisclosure" open>
+        <summary>Steuerung</summary>
+        <section class="control-band" aria-label="Game controls">
+          <div>
+            <h2>Modus</h2>
+            <div class="button-row" id="modeButtons"></div>
+          </div>
+          <div>
+            <h2>Stufe</h2>
+            <div class="level-grid" id="levelButtons"></div>
+            <p class="level-description" id="levelDescription">Einfache Sätze mit Nominativ und Akkusativ.</p>
+          </div>
+        </section>
+      </details>
 
       <section class="status-strip" aria-live="polite">
         <div id="timerBox" class="timer-box hidden">60s</div>
-        <div id="progressText">Stufe 1: 0 / 8</div>
+        <div id="progressText">Fortschritt: 0 / 8</div>
       </section>
 
       <section class="task-card" aria-live="polite">
+        <div class="task-mobile-stats" aria-label="Aktuelle Punkte und Leben">
+          <span>Punkte <strong id="mobileScoreLabel">0</strong></span>
+          <span>Leben <strong id="mobileHeartsLabel">♥ ♥ ♥</strong></span>
+        </div>
         <div class="task-header">
           <div>
             <p class="instruction">Ersetze die markierten Nomen durch Pronomen.</p>

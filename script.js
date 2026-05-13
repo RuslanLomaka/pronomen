@@ -2,14 +2,14 @@ const STORAGE_KEY = "pronounForgeProgress";
 const THEME_KEY = "pronounForgeTheme";
 
 const levelDescriptions = {
-  1: "Stufe 1: einfache Sätze mit Nominativ und Akkusativ.",
-  2: "Stufe 2: Dativ-Verben wie helfen, danken, antworten, gehören und folgen.",
-  3: "Stufe 3: persönliche Pronomen: ich, du, wir, ihr und formelles Sie.",
-  4: "Stufe 4: zwei Objekte im Satz: Dativ-Person und Akkusativ-Sache.",
-  5: "Stufe 5: Präpositionen mit Dativ oder Akkusativ.",
-  6: "Stufe 6: Orte und Wechselpräpositionen: wo = Dativ, wohin = Akkusativ.",
-  7: "Stufe 7: gemischte Wiederholung aus allen bisherigen Stufen.",
-  8: "Stufe 8: Boss-Stufe mit längeren Sätzen, Fallen und zwei Pronomen."
+  1: "Einfache Sätze mit Nominativ und Akkusativ.",
+  2: "Dativ-Verben wie helfen, danken, antworten, gehören und folgen.",
+  3: "Persönliche Pronomen: ich, du, wir, ihr und formelles Sie.",
+  4: "Zwei Objekte im Satz: Dativ-Person und Akkusativ-Sache.",
+  5: "Präpositionen mit Dativ oder Akkusativ.",
+  6: "Orte und Wechselpräpositionen: wo = Dativ, wohin = Akkusativ.",
+  7: "Gemischte Wiederholung aus allen bisherigen Stufen.",
+  8: "Boss-Stufe mit längeren Sätzen, Fallen und zwei Pronomen."
 };
 
 const tasks = [
@@ -1189,6 +1189,7 @@ function initApp() {
   cacheElements();
   loadProgress();
   loadTheme();
+  setControlsLayout();
   renderCheatSheet();
   renderModeButtons();
   renderLevelButtons();
@@ -1198,13 +1199,15 @@ function initApp() {
 }
 
 function cacheElements() {
-  els.currentLevelLabel = document.getElementById("currentLevelLabel");
   els.scoreLabel = document.getElementById("scoreLabel");
   els.streakLabel = document.getElementById("streakLabel");
   els.heartsLabel = document.getElementById("heartsLabel");
+  els.mobileScoreLabel = document.getElementById("mobileScoreLabel");
+  els.mobileHeartsLabel = document.getElementById("mobileHeartsLabel");
   els.modeButtons = document.getElementById("modeButtons");
   els.levelButtons = document.getElementById("levelButtons");
   els.levelDescription = document.getElementById("levelDescription");
+  els.controlsDisclosure = document.getElementById("controlsDisclosure");
   els.themeToggle = document.getElementById("themeToggle");
   els.timerBox = document.getElementById("timerBox");
   els.progressText = document.getElementById("progressText");
@@ -1240,6 +1243,12 @@ function bindEvents() {
   els.mistakeModeButton.addEventListener("click", () => startMode("mistakes"));
   els.resetButton.addEventListener("click", resetProgress);
   document.addEventListener("keydown", handleKeyboard);
+  const mobileControlsQuery = window.matchMedia("(max-width: 820px)");
+  if (mobileControlsQuery.addEventListener) {
+    mobileControlsQuery.addEventListener("change", setControlsLayout);
+  } else if (mobileControlsQuery.addListener) {
+    mobileControlsQuery.addListener(setControlsLayout);
+  }
 }
 
 function renderModeButtons() {
@@ -1590,14 +1599,16 @@ function trackWeakSpots(task) {
 }
 
 function updateStats() {
-  els.currentLevelLabel.textContent = state.currentLevel;
   els.scoreLabel.textContent = state.score;
   els.streakLabel.textContent = state.streak;
-  els.heartsLabel.textContent = state.currentMode === "speed" ? "∞" : "♥ ".repeat(Math.max(state.hearts, 0)).trim();
+  const heartsText = state.currentMode === "speed" ? "∞" : "♥ ".repeat(Math.max(state.hearts, 0)).trim();
+  els.heartsLabel.textContent = heartsText;
+  els.mobileScoreLabel.textContent = state.score;
+  els.mobileHeartsLabel.textContent = heartsText;
   const count = state.correctCountByLevel[state.currentLevel] || 0;
   els.progressText.textContent = state.currentMode === "speed"
     ? `Zeit: ${state.speedCorrect} richtig, ${state.speedWrong} falsch`
-    : `Stufe ${state.currentLevel}: ${Math.min(count, 8)} / 8`;
+    : `Fortschritt: ${Math.min(count, 8)} / 8`;
   els.levelDescription.textContent = levelDescriptions[state.currentLevel];
   renderWeakSpots();
   renderModeButtonsState();
@@ -1618,8 +1629,13 @@ function toggleTheme() {
 function applyTheme() {
   const isDark = state.theme === "dark";
   document.body.classList.toggle("dark-theme", isDark);
+  document.documentElement.classList.toggle("dark-theme", isDark);
   els.themeToggle.textContent = isDark ? "Hell" : "Dunkel";
   els.themeToggle.setAttribute("aria-pressed", String(isDark));
+}
+
+function setControlsLayout() {
+  els.controlsDisclosure.open = !window.matchMedia("(max-width: 820px)").matches;
 }
 
 function renderModeButtonsState() {
