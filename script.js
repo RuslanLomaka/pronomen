@@ -17,6 +17,7 @@ const modeHelp = {
   speed: "60 Sekunden Zeit. Beantworte so viele Aufgaben wie möglich.",
   minimalPair: "Sehr ähnliche Sätze. Du siehst, wie der Fall das Pronomen ändert.",
   context: "Übt Pronomen, die eine Situation brauchen: uns, Sie/Ihnen und sie/ihnen.",
+  nano: "Sehr kurzer Kontext. Danach ersetzt du die Namen durch Pronomen.",
   boss: "Schwere Aufgaben mit Fallen, zwei Pronomen und gemischten Fällen.",
   mistakes: "Übt nur Aufgaben, die du vorher falsch beantwortet hast."
 };
@@ -1490,6 +1491,7 @@ function renderModeButtons() {
     { id: "speed", label: "Zeit" },
     { id: "minimalPair", label: "Paare" },
     { id: "context", label: "Kontext" },
+    { id: "nano", label: "Nano" },
     { id: "boss", label: "Boss" },
     { id: "mistakes", label: "Fehler" }
   ];
@@ -1737,6 +1739,9 @@ function getTasksForCurrentMode() {
   }
   if (state.currentMode === "context") {
     return tasks.filter((task) => task.modeTags.includes("context"));
+  }
+  if (state.currentMode === "nano") {
+    return tasks.filter((task) => task.modeTags.includes("nano"));
   }
   if (state.currentMode === "boss") {
     return tasks.filter((task) => task.level === 8 || task.modeTags.includes("boss"));
